@@ -44,11 +44,13 @@ export default function Hero() {
       {/* Device preview section */}
       <div className="relative mt-16 w-full max-w-[366px] mx-auto">
         {/* Decorative element suggesting freshness */}
-        <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-[#fff2ed] to-[#ffebd6] blur-3xl scale-150"></div>
+        <div className="absolute -inset-8 rounded-full bg-gradient-to-r from-[#fff2ed] to-[#ffebd6] blur-3xl scale-150">
 
+        </div>
         <PhoneFrame className="relative mx-auto max-w-[366px] shadow-2xl border border-gray-200 rounded-lg overflow-hidden" priority>
           <AppDemo />
         </PhoneFrame>
+
       </div>
     </section>
   );
