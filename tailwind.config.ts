@@ -46,7 +46,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ["Roboto", "sans-serif"],
+        sans: ['Roboto', 'ui-sans-serif', 'system-ui', 'Helvetica', 'Arial', 'sans-serif'],
       },
       keyframes: {
         'fade-in': {

@@ -15,87 +15,87 @@ interface Review {
 
 const reviews: Array<Review> = [
   {
-    title: 'It really works.',
-    body: 'I downloaded Pocket today and turned $5000 into $25,000 in half an hour.',
-    author: 'CrazyInvestor',
+    title: 'Incredible meal planning!',
+    body: 'With WellFed, I’ve completely changed how I eat. I plan a whole week of nutritious meals in minutes!',
+    author: 'HealthyChef123',
     rating: 5,
   },
   {
-    title: 'You need this app.',
-    body: 'I didn’t understand the stock market at all before Pocket. I still don’t, but at least I’m rich now.',
-    author: 'CluelessButRich',
+    title: 'Delicious recipes every time',
+    body: 'I never imagined I’d find so many easy and healthy recipes in one app. My kids love the meals!',
+    author: 'MomOf3',
     rating: 5,
   },
   {
-    title: 'This shouldn’t be legal.',
-    body: 'Pocket makes it so easy to win big in the stock market that I can’t believe it’s actually legal.',
-    author: 'LivingDaDream',
+    title: 'Saved so much time & money',
+    body: 'WellFed’s grocery list feature cuts my shopping time in half. I’m also wasting less food and saving money!',
+    author: 'FrugalFoodie',
     rating: 5,
   },
   {
-    title: 'Screw financial advisors.',
-    body: 'I barely made any money investing in mutual funds. With Pocket, I’m doubling my net-worth every single month.',
-    author: 'JordanBelfort1962',
+    title: 'Lost weight, feeling great',
+    body: 'I’ve finally been able to stick to my nutrition goals. Thanks to WellFed, I lost 10lbs in a month—without feeling deprived!',
+    author: 'FitAndFull',
     rating: 5,
   },
   {
-    title: 'I love it!',
-    body: 'I started providing insider information myself and now I get new insider tips every 5 minutes. I don’t even have time to act on all of them. New Lamborghini is being delivered next week!',
-    author: 'MrBurns',
+    title: 'Endless variety',
+    body: 'I never get bored. Each week I discover new cuisines and dietary options that keep me excited about cooking.',
+    author: 'GlobalGourmet',
     rating: 5,
   },
   {
-    title: 'Too good to be true.',
-    body: 'I was making money so fast with Pocket that it felt like a scam. But I sold my shares and withdrew the money and it’s really there, right in my bank account. This app is crazy!',
-    author: 'LazyRich99',
+    title: 'Perfect for busy schedules',
+    body: 'As a working professional, having my meals planned out is a game-changer. I feel more organized and healthier than ever.',
+    author: 'TimeSaver',
     rating: 5,
   },
   {
-    title: 'Wish I could give 6 stars',
-    body: 'This is literally the most important app you will ever download in your life. Get on this before it’s so popular that everyone else is getting these tips too.',
-    author: 'SarahLuvzCash',
+    title: 'Family-approved',
+    body: 'My picky eaters now enjoy dinner. The app’s personalized recommendations help me find meals everyone likes.',
+    author: 'HappyFamily',
     rating: 5,
   },
   {
-    title: 'Bought an island.',
-    body: 'Yeah, you read that right. Want your own island too? Get Pocket.',
-    author: 'ScroogeMcduck',
+    title: 'Great for beginners',
+    body: 'I never thought I’d enjoy cooking. WellFed’s step-by-step instructions made it easy to start.',
+    author: 'NewCookInTown',
     rating: 5,
   },
   {
-    title: 'No more debt!',
-    body: 'After 2 weeks of trading on Pocket I was debt-free. Why did I even go to school at all when Pocket exists?',
-    author: 'BruceWayne',
+    title: 'Dietary needs met',
+    body: 'I have gluten intolerance, and WellFed ensures I only see recipes that are safe for me. Such peace of mind!',
+    author: 'GlutenFreeLife',
     rating: 5,
   },
   {
-    title: 'I’m 13 and I’m rich.',
-    body: 'I love that with Pocket’s transaction anonymization I could sign up and start trading when I was 12 years old. I had a million dollars before I had armpit hair!',
-    author: 'RichieRich',
+    title: 'Inspires creativity',
+    body: 'I’ve discovered ingredients I never used before. Now I’m experimenting in the kitchen and loving it.',
+    author: 'CulinaryExplorer',
     rating: 5,
   },
   {
-    title: 'Started an investment firm.',
-    body: 'I charge clients a 3% management fee and just throw all their investments into Pocket. Easy money!',
-    author: 'TheCountOfMonteChristo',
+    title: 'Keeps me on track',
+    body: 'WellFed’s nutritional info and meal tracking have helped me stay consistent with my fitness goals.',
+    author: 'GymGains',
     rating: 5,
   },
   {
-    title: 'It’s like a superpower.',
-    body: 'Every tip Pocket has sent me has paid off. It’s like playing Blackjack but knowing exactly what card is coming next!',
-    author: 'ClarkKent',
+    title: 'Perfect portions',
+    body: 'No more guesswork. I can easily adjust serving sizes to match my family’s needs—no leftovers, no shortage!',
+    author: 'JustRightMeals',
     rating: 5,
   },
   {
-    title: 'Quit my job.',
-    body: 'I downloaded Pocket three days ago and quit my job today. I can’t believe no one else thought to build a stock trading app that works this way!',
-    author: 'GeorgeCostanza',
+    title: 'An absolute must-have',
+    body: 'If you want to cook healthier and smarter, this app is a no-brainer. I can’t imagine meal planning without it now.',
+    author: 'Foodie4Life',
     rating: 5,
   },
   {
-    title: 'Don’t download this app',
-    body: 'Unless you want to have the best life ever! I am literally writing this from a yacht.',
-    author: 'JeffBezos',
+    title: 'So convenient',
+    body: 'I love being able to share meal plans with friends and try out their favorites too. Cooking is now a community experience!',
+    author: 'SocialEater',
     rating: 5,
   },
 ]
@@ -116,7 +116,7 @@ function StarRating({ rating }: { rating: Review['rating'] }) {
           key={index}
           className={clsx(
             'h-5 w-5',
-            rating > index ? 'fill-cyan-500' : 'fill-gray-300',
+            rating > index ? 'fill-primary' : 'fill-gray-300',
           )}
         />
       ))}
@@ -282,10 +282,10 @@ export function Reviews() {
           id="reviews-title"
           className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
         >
-          Everyone is changing their life with Pocket.
+          Everyone is enjoying better meals with WellFed.
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          Thousands of people have doubled their net-worth in the last 30 days.
+          Thousands of users have transformed their eating habits, saved time, and reached their nutrition goals.
         </p>
         <ReviewGrid />
       </Container>

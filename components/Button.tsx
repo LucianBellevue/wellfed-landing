@@ -10,24 +10,31 @@ const baseStyles = {
 
 const variantStyles = {
   solid: {
-    gradient: 'relative overflow-hidden bg-gradient-to-r from-primary to-secondary text-white before:absolute before:inset-0 active:before:bg-transparent hover:before:bg-white/10 active:bg-cyan-600 active:text-white/80 before:transition-colors',
-    white:
-      'bg-white text-cyan-900 hover:bg-white/90 active:bg-white/90 active:text-cyan-900/70',
-    gray: 'bg-gray-800 text-white hover:bg-gray-900 active:bg-gray-800 active:text-white/80',
+    gradient:
+      'relative overflow-hidden bg-gradient-to-r from-primary to-secondary text-white ' +
+      'before:absolute before:inset-0 before:transition-colors ' +
+      'hover:before:bg-white/10 active:text-white/80',
+    // Additional solid variants can be added here if desired.
   },
   outline: {
-    gray: 'border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80',
+    // You can define outline variants if needed,
+    // e.g. using brand colors for borders and text.
+    primary:
+      'border-primary text-primary hover:border-secondary hover:text-secondary active:text-primary/80 active:border-primary/80',
   },
 }
+
+type SolidColor = keyof typeof variantStyles.solid
+type OutlineColor = keyof typeof variantStyles.outline
 
 type ButtonProps = (
   | {
       variant?: 'solid'
-      color?: keyof typeof variantStyles.solid
+      color?: SolidColor
     }
   | {
       variant: 'outline'
-      color?: keyof typeof variantStyles.outline
+      color?: OutlineColor
     }
 ) &
   (
@@ -37,18 +44,11 @@ type ButtonProps = (
       })
   )
 
-export function Button({ className, ...props }: ButtonProps) {
-  props.variant ??= 'solid'
-  props.color ??= 'gray'
-
+export function Button({ className, variant = 'solid', color = 'gradient', ...props }: ButtonProps) {
   className = clsx(
-    baseStyles[props.variant],
-    props.variant === 'outline'
-      ? variantStyles.outline[props.color]
-      : props.variant === 'solid'
-        ? variantStyles.solid[props.color]
-        : undefined,
-    className,
+    baseStyles[variant],
+    (variantStyles[variant] as Record<string, string>)[color],
+    className
   )
 
   return typeof props.href === 'undefined' ? (

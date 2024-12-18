@@ -3,10 +3,11 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const Sans = Roboto({
+// Configure the Roboto font via next/font/google
+const roboto = Roboto({
   variable: "--font-roboto-sans",
   subsets: ["latin"],
-  weight: ["400", "700", "900",],
+  weight: ["400", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -29,16 +30,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${Sans.variable} bg-gray-50 antialiased`}>
+    <html lang="en" className={`${roboto.variable} bg-gray-50 antialiased`}>
       <body>
         <Providers>
-        {children}
+          {children}
         </Providers>
       </body>
     </html>
   );
 }
+

@@ -4,53 +4,53 @@ import Link from 'next/link'
 const faqs = [
   [
     {
-      question: 'How do I know the tips are good?',
+      question: 'How does WellFed choose recipes for me?',
       answer:
-        'Our whole business depends on our tips being good, so it’s in our best interest that they are. The results of our customers speak for themselves, just trust us.',
+        'WellFed tailors recipes based on your dietary preferences, favorite cuisines, and nutritional goals, ensuring you always find options you’ll love.',
     },
     {
-      question: 'Isn’t this insider trading?',
+      question: 'Can I plan my meals for the entire week?',
       answer:
-        'Yes exactly. But at scale! Historically you could only make insider trades with knowledge from your direct network. Pocket brings you insider trading tips from people you don’t even know.',
+        'Absolutely. With our meal-planning feature, you can schedule your breakfast, lunch, dinner, and even snacks for the whole week. Adjust portion sizes and easily reorder meals to suit your routine.',
     },
     {
-      question: 'But isn’t insider trading illegal?',
+      question: 'What if I have dietary restrictions or allergies?',
       answer:
-        'Here’s the thing: you’re the one doing the insider trading, not us. We’re just giving you the tips and some tools to make trades. We’re not doing anything wrong here.',
-    },
-  ],
-  [
-    {
-      question: 'Do the people giving you tips realize what they are doing?',
-      answer:
-        'Again I would argue this isn’t really our responsibility. People make their own choices. If they don’t research the consequences that’s on them, not on us.',
-    },
-    {
-      question: 'Where is Pocket based?',
-      answer:
-        'Let’s just say it’s not somewhere where the SEC is going to find us.',
-    },
-    {
-      question: 'Is there any age limit to trading on Pocket?',
-      answer:
-        'For our free plan, the age limit is based on the minimum age to trade in your country of residence. Our VIP plan uses advanced transaction anonymization though, so you can use that plan even if you’re 9 years old. Or a dog.',
+        'Simply update your profile with any dietary needs or allergies. WellFed filters recipes to accommodate your restrictions, ensuring you have safe and delicious options.',
     },
   ],
   [
     {
-      question: 'How did you get this on the App Store?',
+      question: 'Are nutritional facts available for each recipe?',
       answer:
-        'Honestly we were surprised too, but eventually we found out that the app reviewer found the app so compelling they approved it just so they could use it themselves.',
+        'Yes. Every recipe includes detailed nutritional information, including calories, macros, and key nutrients. This helps you make informed decisions about what you eat.',
     },
     {
-      question: 'How do I explain the money I withdraw from Pocket to the IRS?',
+      question: 'Can WellFed help me create a shopping list?',
       answer:
-        'This feels like one-hundred percent a you problem. Pocket is not responsible in any way for your tax returns.',
+        'Certainly! After selecting your meals for the week, WellFed automatically generates a grocery list with all the required ingredients, making shopping simpler and more efficient.',
     },
     {
-      question: 'How do I become an insider?',
+      question: 'How do I save my favorite recipes?',
       answer:
-        'Contact us with some details about your industry and the type of access you have to apply for an insider account. Once approved, we’ll send you a guide on collecting insider information without being detected at work.',
+        'Tap the “Favorite” icon on any recipe to add it to your personal collection. You can easily access all your bookmarked recipes whenever you need them.',
+    },
+  ],
+  [
+    {
+      question: 'Is WellFed free, or do I need a subscription?',
+      answer:
+        'WellFed offers a robust free version with essential features. For more advanced tools, in-depth nutritional analysis, and exclusive meal plans, you can upgrade to a premium subscription at any time.',
+    },
+    {
+      question: 'Can I share meal plans with friends or family?',
+      answer:
+        'Yes! WellFed allows you to share your meal plans or individual recipes via links, email, or social media. It’s an easy way to keep everyone on the same page and share cooking inspiration.',
+    },
+    {
+      question: 'How does WellFed protect my data and privacy?',
+      answer:
+        'Your privacy is a top priority. We securely store your personal and dietary information, using it only to enhance your experience. We never sell your data to third parties.',
     },
   ],
 ]
@@ -71,9 +71,9 @@ export function Faqs() {
             Frequently asked questions
           </h2>
           <p className="mt-2 text-lg text-gray-600">
-            If you have anything else you want to ask,{' '}
+            If you have anything else you’d like to know,{' '}
             <Link
-              href="mailto:info@example.com"
+              href="mailto:info@wellfedapp.com"
               className="text-gray-900 underline"
             >
               reach out to us
@@ -104,3 +104,4 @@ export function Faqs() {
     </section>
   )
 }
+
