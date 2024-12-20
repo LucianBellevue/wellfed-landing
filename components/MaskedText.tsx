@@ -12,14 +12,13 @@ interface MaskedTextProps {
 
 /**
  * MaskedText:
- * Displays large text with a background image. Added a subtle motion
- * animation for entry (fade in and slight upward movement).
+ * Displays large masked text and animates in only when in view.
  */
 export function MaskedText({ text, imageSrc, className }: MaskedTextProps) {
   return (
     <motion.div
       className={clsx(
-        'relative text-6xl font-bold uppercase inline-block bg-clip-text text-transparent',
+        'relative font-bold uppercase inline-block bg-clip-text text-transparent',
         className
       )}
       style={{
@@ -27,11 +26,13 @@ export function MaskedText({ text, imageSrc, className }: MaskedTextProps) {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
-      initial={{ opacity: 0, y: 20 }}      // start slightly offscreen and transparent
-      animate={{ opacity: 1, y: 0 }}       // fade in and move up to original position
-      transition={{ duration: 0.8, ease: 'easeOut' }} // adjust timing as needed
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }} // animate only once when it comes into view
+      transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       {text}
     </motion.div>
   )
 }
+

@@ -1,11 +1,9 @@
-// components/Hero.tsx
 import { AppDemo } from "@/components/AppDemo";
 import { AppStoreLink } from "@/components/AppStoreLink";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { BackgroundIllustration } from "@/components/BackgroundIllustration";
-// Removed Garnish import
 
 function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -30,6 +28,9 @@ export function Hero() {
         backgroundPosition: "center",
       }}
     >
+      {/* Gradient at the bottom to blend into gray-50 */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-gray-50" />
+
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20 relative">
           {/* Text Content */}
@@ -51,6 +52,7 @@ export function Hero() {
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
                 color="primary"
+                className="relative z-10 border border-white/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40"
               >
                 <PlayIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2.5">Watch how it works</span>

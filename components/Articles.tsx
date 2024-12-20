@@ -15,19 +15,19 @@ const articles: Article[] = [
     title: '10 Simple Breakfast Ideas to Start Your Day Right',
     description: 'Discover quick and nutritious breakfast recipes that will keep you energized all morning.',
     image: '/images/articles/breakfast-ideas.jpg',
-    url: '/articles/10-simple-breakfast-ideas',
+    url: '../app/(main)/articles/article-one.tsx',
   },
   {
     title: 'Meal Planning for Busy People',
     description: 'Learn how to efficiently plan weekly meals, save time, and reduce food waste.',
     image: '/images/articles/meal-planning.jpg',
-    url: '/articles/meal-planning-for-busy-people',
+    url: '../app/(main)/articles/article-two.tsx',
   },
   {
     title: 'Understanding Macros: Protein, Carbs, and Fats',
     description: 'A beginner’s guide to macronutrients and how to balance them for optimal health.',
     image: '/images/articles/macros-guide.jpg',
-    url: '/articles/understanding-macros',
+    url: '../app/(main)/articles/article-three.tsx',
   },
 ]
 
