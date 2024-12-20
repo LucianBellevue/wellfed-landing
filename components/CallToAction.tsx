@@ -1,8 +1,8 @@
 // components/CallToAction.tsx
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
-import { AppStoreLink } from '@/components/AppStoreLink'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { CircleBackground } from '@/components/CircleBackground'
 import { Container } from '@/components/Container'
 import { ParallaxImage } from '@/components/ParallaxImage'
@@ -10,79 +10,70 @@ import { MaskedText } from '@/components/MaskedText'
 
 export function CallToAction() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const [scrollPosition, setScrollPosition] = useState(0)
 
-  useEffect(() => {
-    function handleScroll() {
-      if (!sectionRef.current) return
-      const rect = sectionRef.current.getBoundingClientRect()
-      // The idea: As the section enters the viewport, we calculate how far it's been scrolled vertically
-      // and translate horizontally based on that value.
+  // useScroll hooks from framer-motion to track scroll progress through this section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  })
 
-      const offsetTop = rect.top
-      const windowHeight = window.innerHeight
-      // When the top of the section hits the top of the viewport, offsetTop = 0
-      // We can map vertical scroll to horizontal translation.
-      const scrollDist = Math.max(0, windowHeight - offsetTop)
-      setScrollPosition(scrollDist)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
-
-  // Calculate a horizontal translation based on scroll position
-  // Adjust multiplier for desired speed/distance
-  const translateX = -scrollPosition * 0.2
+  // We define a horizontal translation based on vertical scroll progress.
+  // For example, at scroll progress 0, translateX = 0.
+  // At scroll progress 1, translateX = -200px (or more for a more dramatic swipe).
+  // Increase the second value (-500, etc.) to require more scrolling before the section ends.
+  const translateX = useTransform(scrollYProgress, [0, 1], [0, -500])
 
   return (
     <section
       id="get-started"
       ref={sectionRef}
-      className="relative overflow-hidden bg-gray-900 py-20 sm:py-28"
-      style={{ height: '150vh', position: 'relative' }}
-      // Height extended to show parallax effect more clearly
+      className="py-10 relative overflow-hidden bg-gradient-to-t from-secondary to-slate-100"
+      style={{
+        // Increase the section height so that the user has space to scroll and push the horizontal content
+        height: '100vh',
+        position: 'relative'
+      }}
     >
-      {/* Background Circle */}
-      <div className="absolute left-20 top-1/2 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2 pointer-events-none">
+      {/* Rotating circle background for visual interest */}
+      <div className="pointer-events-none absolute left-20 top-1/2 -translate-y-1/2 sm:left-1/2 sm:-translate-x-1/2">
         <CircleBackground color="#fff" className="animate-spin-slower" />
       </div>
 
-      <Container className="relative">
-        <div
-          className="mx-auto max-w-4xl flex flex-col sm:text-center"
-          style={{
-            transform: `translateX(${translateX}px)`,
-            transition: 'transform 0.1s linear',
-          }}
+      <Container className="relative h-screen flex items-center justify-center">
+        {/* We wrap our horizontally-moving content in a motion.div so we can apply transforms */}
+        <motion.div
+          className="mx-auto max-w-4xl flex flex-col items-center sm:text-center space-y-12"
+          style={{ x: translateX }}
         >
-          {/* Masked text overlay */}
-          <div className="relative mb-10">
-            <MaskedText text="Eat Better" imageSrc="/images/fresh-veggies.jpg" />
-          </div>
+          {/* Masked text bigger */}
+          <MaskedText
+            text="Eat Better"
+            imageSrc="/images/fresh-veggies.jpeg"
+            className="text-6xl sm:text-8xl font-bold"
+          />
 
-          {/* Parallax images layered behind or between text */}
           <div className="relative flex flex-col items-center space-y-8">
+            {/* First parallax image - moves at a different rate */}
             <ParallaxImage
               src="/images/dish-1.jpg"
               alt="Healthy dish"
               speedFactor={0.5}
               className="w-64 h-64 rounded-full object-cover"
             />
+
+            {/* Heading and description */}
             <h2 className="text-3xl font-medium tracking-tight text-white sm:text-4xl">
-              Start your personalized journey with WellFed
+              Your Personalized Culinary Journey
             </h2>
             <p className="mt-4 text-lg text-gray-300 max-w-xl">
-              Sign up now and receive your first personalized, nutritionist-approved recipe.
-              Optimize your meal planning and grocery shopping, and discover how easy it is
-              to cook smarter, eat healthier, and feel better every day.
+              Scroll through to uncover a world of personalized, nutritionist-approved recipes.
+              Optimize your meal planning, elevate your grocery shopping, and discover how effortless
+              it is to cook smarter, eat healthier, and feel better every day.
             </p>
-            <div className="mt-8 flex justify-center">
-              <AppStoreLink color="white" />
-            </div>
 
+            {/* Removed the call to action button */}
+
+            {/* Second parallax image */}
             <ParallaxImage
               src="/images/dish-2.jpg"
               alt="Another healthy dish"
@@ -90,7 +81,7 @@ export function CallToAction() {
               className="w-64 h-64 rounded-full object-cover"
             />
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   )

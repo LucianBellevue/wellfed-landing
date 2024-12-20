@@ -31,7 +31,7 @@ export function CircleBackground({
         </linearGradient>
       </defs>
       <path
-        opacity=".2"
+        opacity="0"
         d="M1 279C1 125.465 125.465 1 279 1s278 124.465 278 278-124.465 278-278 278S1 432.535 1 279Z"
         stroke={color}
       />

@@ -3,7 +3,8 @@
 
 import clsx from 'clsx'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
+import { useScroll, useTransform, motion } from 'framer-motion'
 
 interface ParallaxImageProps {
   src: string
@@ -12,29 +13,28 @@ interface ParallaxImageProps {
   className?: string
 }
 
+/**
+ * ParallaxImage:
+ * Uses scroll progress via Framer Motion to smoothly translate the image vertically.
+ * speedFactor determines how fast it moves relative to scroll.
+ */
 export function ParallaxImage({ src, alt, speedFactor = 0.5, className }: ParallaxImageProps) {
   const ref = useRef<HTMLDivElement>(null)
-  const [scrollY, setScrollY] = useState(0)
 
-  useEffect(() => {
-    function onScroll() {
-      setScrollY(window.scrollY)
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  // Track scroll on entire page
+  const { scrollYProgress } = useScroll()
 
-  // For a more refined approach, you’d calculate the image’s offset and size,
-  // but here we just shift based on global scroll for demonstration.
-  const translateY = scrollY * speedFactor * -0.1 // Adjust factor as needed
+  // Map scroll progress [0, 1] to a vertical translation range.
+  // For instance, at 0% scroll, translateY = 0, at 100% scroll, translateY = -100 * speedFactor
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, speedFactor * -100])
 
   return (
-    <div
+    <motion.div
       ref={ref}
       className={clsx('relative', className)}
-      style={{ transform: `translateY(${translateY}px)`, transition: 'transform 0.1s linear' }}
+      style={{ y: translateY }}
     >
       <Image src={src} alt={alt} fill className="object-cover rounded-full" />
-    </div>
+    </motion.div>
   )
 }
