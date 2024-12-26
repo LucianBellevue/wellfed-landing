@@ -1,5 +1,7 @@
+// components/Hero.tsx
 import { AppDemo } from "@/components/AppDemo";
 import { AppStoreLink } from "@/components/AppStoreLink";
+import { GoogleStoreLink } from "@/components/GoogleStoreLink";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { PhoneFrame } from "@/components/PhoneFrame";
@@ -21,7 +23,7 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
 export function Hero() {
   return (
     <div
-      className="relative overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36"
+      className="relative overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 "
       style={{
         backgroundImage: "url('/images/hero-food-bg.jpeg')",
         backgroundSize: "cover",
@@ -48,6 +50,7 @@ export function Hero() {
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <AppStoreLink />
+              <GoogleStoreLink url="https://play.google.com/store/apps/details?id=com.example.yourapp" />
               <Button
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
@@ -68,7 +71,6 @@ export function Hero() {
               className="absolute inset-0"
               gradient={false}
             />
-
             <div
               className="-mx-4 h-[448px] px-9
                             sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32 relative z-10"
