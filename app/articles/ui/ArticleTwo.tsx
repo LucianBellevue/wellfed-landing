@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-export default function ArticleThree() {
+
+export default function ArticleTwo() {
   return (
     <article className="max-w-3xl mx-auto py-10 px-4">
       <header className="mb-8">

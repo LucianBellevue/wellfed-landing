@@ -1,16 +1,12 @@
-// pages/articles/article-three.tsx
-import Image from "next/image";
+// pages/articles/article-one.tsx
+import Image from 'next/image'
 
-export default function ArticleTwo() {
+export default function ArticleOne() {
   return (
     <article className="max-w-3xl mx-auto py-10 px-4">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">
-          Meal Planning for Busy People
-        </h1>
-        <p className="text-gray-700 mt-2">
-          Streamline your week by planning all your meals in advance.
-        </p>
+        <h1 className="text-3xl font-bold text-gray-900">Paleo Vs. Keto: Spot the Difference</h1>
+        <p className="text-gray-700 mt-2">The Paleolithic and Ketogenic diets are two popular lifestyle choices for those looking to improve their health. The Paleo diet focuses on maintaining physical health through foods humans consumed thousands of years ago as hunter-gatherers, while the Keto diet focuses on improving weight loss through high fat, low carb solutions that limit your body’s production of glucose. </p>
       </header>
 
       {/* Hero / Room Image */}
@@ -27,16 +23,12 @@ export default function ArticleTwo() {
       {/* Article Content */}
       <section className="prose prose-lg max-w-none text-gray-800">
         <p>
-          Breakfast is often called the most important meal of the day. Below
-          are ten simple breakfast ideas that are both delicious and nutritious.
-          They can be prepared quickly, helping you maintain a healthy lifestyle
-          even on busy mornings.
+          Breakfast is often called the most important meal of the day. Below are ten simple breakfast ideas
+          that are both delicious and nutritious. They can be prepared quickly, helping you maintain a healthy
+          lifestyle even on busy mornings.
         </p>
         <h2>1. Overnight Oats</h2>
-        <p>
-          Prepare oats the night before with Greek yogurt, chia seeds, and
-          berries...
-        </p>
+        <p>Prepare oats the night before with Greek yogurt, chia seeds, and berries...</p>
         {/* ... Add more breakfast ideas ... */}
       </section>
 
@@ -56,17 +48,15 @@ export default function ArticleTwo() {
         <h3 className="text-xl font-semibold text-gray-900">Citations</h3>
         <ul className="list-disc list-inside mt-4 text-gray-700">
           <li>
-            Smith, J. (2021). <em>The Complete Guide to Healthy Eating</em>.
-            Wellness Press.
+            Smith, J. (2021). <em>The Complete Guide to Healthy Eating</em>. Wellness Press.
           </li>
           <li>
-            Johnson, L. (2020). &quot;The Role of Breakfast in Maintaining a
-            Healthy Metabolism,&quot;
+            Johnson, L. (2020). &quot;The Role of Breakfast in Maintaining a Healthy Metabolism,&quot;
             <em>Nutrition Journal</em>, 15(3), 45-58.
           </li>
           {/* Add more citations as needed */}
         </ul>
       </footer>
     </article>
-  );
+  )
 }

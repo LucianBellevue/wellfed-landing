@@ -10,8 +10,8 @@ interface Article {
 
 const articles: Article[] = [
   {
-    title: '10 Simple Breakfast Ideas',
-    description: 'Start your day right with these easy, nutritious breakfast options.',
+    title: 'Paleo Vs. Keto: Spot the Difference',
+    description: 'The Paleolithic and Ketogenic diets are two popular lifestyle choices for those looking to improve their health.',
     slug: 'article-one',
     image: '/images/articles/breakfast.jpg'
   },

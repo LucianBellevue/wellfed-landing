@@ -1,12 +1,16 @@
-// pages/articles/article-one.tsx
-import Image from 'next/image'
+// pages/articles/article-three.tsx
+import Image from "next/image";
 
-export default function ArticleOne() {
+export default function ArticleThree() {
   return (
     <article className="max-w-3xl mx-auto py-10 px-4">
       <header className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">10 Simple Breakfast Ideas</h1>
-        <p className="text-gray-700 mt-2">Start your day right with these easy, nutritious options.</p>
+        <h1 className="text-3xl font-bold text-gray-900">
+          Meal Planning for Busy People
+        </h1>
+        <p className="text-gray-700 mt-2">
+          Streamline your week by planning all your meals in advance.
+        </p>
       </header>
 
       {/* Hero / Room Image */}
@@ -23,12 +27,16 @@ export default function ArticleOne() {
       {/* Article Content */}
       <section className="prose prose-lg max-w-none text-gray-800">
         <p>
-          Breakfast is often called the most important meal of the day. Below are ten simple breakfast ideas
-          that are both delicious and nutritious. They can be prepared quickly, helping you maintain a healthy
-          lifestyle even on busy mornings.
+          Breakfast is often called the most important meal of the day. Below
+          are ten simple breakfast ideas that are both delicious and nutritious.
+          They can be prepared quickly, helping you maintain a healthy lifestyle
+          even on busy mornings.
         </p>
         <h2>1. Overnight Oats</h2>
-        <p>Prepare oats the night before with Greek yogurt, chia seeds, and berries...</p>
+        <p>
+          Prepare oats the night before with Greek yogurt, chia seeds, and
+          berries...
+        </p>
         {/* ... Add more breakfast ideas ... */}
       </section>
 
@@ -48,15 +56,17 @@ export default function ArticleOne() {
         <h3 className="text-xl font-semibold text-gray-900">Citations</h3>
         <ul className="list-disc list-inside mt-4 text-gray-700">
           <li>
-            Smith, J. (2021). <em>The Complete Guide to Healthy Eating</em>. Wellness Press.
+            Smith, J. (2021). <em>The Complete Guide to Healthy Eating</em>.
+            Wellness Press.
           </li>
           <li>
-            Johnson, L. (2020). &quot;The Role of Breakfast in Maintaining a Healthy Metabolism,&quot;
+            Johnson, L. (2020). &quot;The Role of Breakfast in Maintaining a
+            Healthy Metabolism,&quot;
             <em>Nutrition Journal</em>, 15(3), 45-58.
           </li>
           {/* Add more citations as needed */}
         </ul>
       </footer>
     </article>
-  )
+  );
 }
