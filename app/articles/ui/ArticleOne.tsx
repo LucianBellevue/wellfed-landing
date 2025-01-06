@@ -12,8 +12,8 @@ export default function ArticleOne() {
       {/* Hero / Room Image */}
       <div className="w-full h-64 relative mb-8">
         <Image
-          src="/images/articles/breakfast-room.jpg" // A room-style image or environment image
-          alt="A cozy kitchen setting"
+          src="/images/articles/size.jpeg" // A room-style image or environment image
+          alt="a measuring tape"
           layout="fill"
           objectFit="cover"
           className="rounded"
@@ -23,12 +23,15 @@ export default function ArticleOne() {
       {/* Article Content */}
       <section className="prose prose-lg max-w-none text-gray-800">
         <p>
-          Breakfast is often called the most important meal of the day. Below are ten simple breakfast ideas
-          that are both delicious and nutritious. They can be prepared quickly, helping you maintain a healthy
-          lifestyle even on busy mornings.
+          We spend a lot of time working on our health but what does that work mean if we don’t know what we’re measuring. These two diets both target different parts of the human diet to provide cleaner eating habits and improved wellness overall. This article will focus on the differences between the Paleolithic and Ketogenic diets and whether or not these lifestyles are the right fit for you.
         </p>
-        <h2>1. Overnight Oats</h2>
-        <p>Prepare oats the night before with Greek yogurt, chia seeds, and berries...</p>
+        <br></br>
+        <ol>Table of Contents
+          <li>What is the Paleo Diet?</li>
+          <li>What is the Keto Diet?</li>
+          <li>Comparing the Two</li>
+          <li>Which Diet is Right for You?</li>
+        </ol>
         {/* ... Add more breakfast ideas ... */}
       </section>
 
