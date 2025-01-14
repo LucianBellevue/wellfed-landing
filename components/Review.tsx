@@ -2,7 +2,7 @@
 'use client'
 
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import { motion, HTMLMotionProps } from 'framer-motion'
 
 interface Review {
   title: string
@@ -16,7 +16,7 @@ export function Review({
   author,
   className,
   ...props
-}: Omit<React.ComponentPropsWithoutRef<'figure'>, keyof Review> & Review) {
+}: Omit<React.ComponentPropsWithoutRef<'figure'>, keyof Review> & Review & HTMLMotionProps<'figure'>) {
   const animationDelay = Math.random() * 0.5 // Random delay up to 0.5s
 
   return (
