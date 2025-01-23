@@ -1,4 +1,4 @@
-// pages/articles/index.tsx
+// (main)/articles/index.tsx
 import Link from 'next/link'
 
 interface Article {
