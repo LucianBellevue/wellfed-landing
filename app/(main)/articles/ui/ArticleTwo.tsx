@@ -6,23 +6,22 @@ export default function ArticleOne() {
     <article className="max-w-3xl mx-auto py-10 px-4">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
-          Paleo Vs. Keto: Spot the Difference
+          How to Make a Balanced Dinner Plate (Keto Edition)
         </h1>
         <p className="text-gray-700 mt-2">
-          The Paleolithic and Ketogenic diets are two popular lifestyle choices
-          for those looking to improve their health. The Paleo diet focuses on
-          maintaining physical health through foods humans consumed thousands of
-          years ago as hunter-gatherers, while the Keto diet focuses on
-          improving weight loss through high fat, low carb solutions that limit
-          your body’s production of glucose.{" "}
+          The Keto diet includes foods that are high in fat and low in
+          carbohydrates like seafood, unprocessed cheese, meat and poultry and
+          leafy vegetables. Your body switches from burning glucose to burning
+          ketones which can lead to significant weight loss as well as other
+          health benefits.
         </p>
       </header>
 
       {/* Hero / Room Image */}
       <div className="w-full h-64 relative mb-8">
         <Image
-          src="/images/articles/size.jpeg" // A room-style image or environment image
-          alt="a measuring tape"
+          src="/images/articles/plates.jpg"
+          alt="a table with white plates and utensils on a wooden table"
           layout="fill"
           objectFit="cover"
           className="rounded-lg"
@@ -32,123 +31,100 @@ export default function ArticleOne() {
       {/* Article Content */}
       <section className="prose prose-lg max-w-none text-gray-800 mb-6">
         <p>
-          We spend a lot of time working on our health but what does that work
-          mean if we don’t know what we’re measuring. These two diets both
-          target different parts of the human diet to provide cleaner eating
-          habits and improved wellness overall. This article will focus on the
-          differences between the Paleolithic and Ketogenic diets and whether or
-          not these lifestyles are the right fit for you.
+          Eating on a ketogenic diet might seem difficult to some, but here at
+          WellFed we believe in making the complex simple. So, here’s your guide
+          to making a beautiful dinner plate that satisfies your keto diet,
+          whether you’re new to the ketogenic lifestyle or a seasoned pro.
         </p>
         <br></br>
         <ol className="space-y-1">
           <span className="font-bold text-xl">Table of Contents</span>
-          <li>The Paleolithic Diet </li>
-          <li>The Ketogenic Diet</li>
-          <li>Similarities and Differences </li>
-          <li>Major Takeaways </li>
+          <li>Ketosis: What is it? </li>
+          <li>Why choose a ketogenic diet?</li>
+          <li>So what can I eat? </li>
+          <li>MContinuing your WellFed journey </li>
         </ol>
         {/* ... Add more breakfast ideas ... */}
       </section>
       <section className="prose prose-lg max-w-none text-gray-800 mb-6">
-        <h2 className="font-semibold text-2xl">The Paleolithic Diet</h2>
+        <h2 className="font-semibold text-2xl">Ketosis: What is it?</h2>
+        <p className="mb-6">
+          Ketosis is a metabolic state in which your body uses fat for fuel
+          instead of carbs. Ketosis occurs when your body doesn’t have enough
+          glucose in your blood to create energy. Instead, your body switches
+          from being powered by glucose to being powered by ketones. These
+          ketones come from your liver and act as a back-up energy source that
+          takes over when you don’t have enough glucose to turn into energy to
+          keep functioning throughout the day.
+        </p>
+        <p className="mb-6">
+          Ketones, or ketone bodies, are acids your body makes when it’s using
+          fat instead of glucose for energy. Your body typically gets most of
+          its energy from glucose with ketones serving as your back-up energy
+          source. Now that your body has switched over to burning fats instead
+          of glucose, your metabolism increases, your hunger goes away, your
+          muscle mass increases, and your risk of blood pressure and heart
+          diseases goes down.
+        </p>
+        <h2 className="font-semibold text-2xl mb-2">
+          Why Choose a Ketogenic Diet?
+        </h2>
+        <p className="mb-6">
+          “Unlike other low-carb diets, which focus on protein, a keto plan
+          centers on fat, which supplies as much as 90% of daily calories.” The
+          goal of a ketogenic diet is to burn fats at a quicker rate than you
+          would on glucose sugar. This makes it one of the go-to lifestyle
+          choices for people trying to lose weight or drop their blood glucose
+          levels. The keto diet aims to force your body into using a different
+          type of fuel. Instead of relying on sugar (glucose) that comes from
+          carbohydrates (such as grains, legumes, vegetables, and fruits), the
+          keto diet relies on ketone bodies, a type of fuel that the liver
+          produces from stored fat.
+        </p>
         {/* Another Room Image or Additional Visual */}
         <div className="w-full h-64 relative my-8">
           <Image
-            src="/images/articles/paleo.jpeg" // Another environment/room-style image
-            alt="an avocado and herbs and tomatoes tossed for contrast on a cutting board"
+            src="/images/articles/food_table.jpeg"
+            alt="an outdoor food table with a variety of dishes"
             layout="fill"
             objectFit="cover"
             className="rounded-lg"
           />
         </div>
+        <h2 className="font-semibold text-2xl mb-2">So, What can I eat?</h2>
         <p className="mb-6">
-          The Paleo diet stands for Paleolithic which refers to that period in
-          time where humans relied on the hunter-gatherer social structure to
-          survive the harsh environments. The idea is to recreate the nutrients
-          and meals humans were eating in this period 10,000 years ago. By
-          following a diet of whole foods and leading physically active lives,
-          hunter-gatherers presumably had much lower rates of lifestyle
-          diseases, such as obesity, diabetes, and heart disease.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">The Ketogenic Diet</h2>
-        <p className="mb-6">
-          The Keto or Ketogenic diet represents a lifestyle based on increasing
-          fats and decreasing carbohydrates in the body. This process, known as
-          ketosis, can lead to your body switching out the glucose necessary for
-          energy production for ketones that are produced in the liver. This
-          diet allows for increased weight loss at an incredible rate because
-          your body relies on its secondary source of power, ketones. As a
-          result, the fat in your body burns more efficiently than it otherwise
-          would under normal circumstances.
+          There are plenty of great recipes that rely on high fat, low
+          carbohydrate makeups and they can range in complexity and cooking
+          ease. Seafood, eggs, cauliflower, zucchini noodles, poultry, and
+          unprocessed cheese are all examples of foods that fit the profile of a
+          ketogenic lifestyle. Some favorites here at WellFed include the Keto
+          Beef Stroganoff and Copycat Ground Chicken Lettuce Wraps. These
+          recipes are just the tip of the iceberg in terms of what you can still
+          eat while on your keto journey. Diet doesn’t mean gross, and the
+          ketogenic diet is a great example of how you can bring delicious
+          flavor and tasty experiences to the dinner table every time.
         </p>
         <h2 className="font-semibold text-2xl mb-2">
-          Similarities and Differences{" "}
+          Continuing Your WellFed Journey{" "}
         </h2>
         <p className="mb-6">
-          As you’ve probably noticed, there are some key similarities and
-          differences between these two diets and we’re going to list out some
-          of the key things to note. Here’s our deep dive.
+          Together with the help of curious readers like you, WellFed can
+          achieve our goal of making the world a fun place to eat for all
+          lifestyles. Your contributions help us make society more WellFed every
+          time you support our content. To learn more about the ketogenic diet
+          and other diets that can enhance your daily experiences and improve
+          your health, visit wellfed.us
         </p>
-        <h2 className="font-semibold text-2xl mb-2">Dairy </h2>
-        <p className="mb-6">
-          Dairy is available to individuals on the Keto diet in the form of
-          select cheeses. However, yogurts and milks are usually high carb items
-          and won’t be viable. As for Paleo individuals, dairy won’t work if you
-          want the desired results.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Fruits and Veggies </h2>
-        <p className="mb-6">
-          Paleo prefers a variety of fruits while Keto needs fruits with low
-          carbohydrate amounts like blackberries and melons. Fruits are fair
-          game in most diets and these two are no exception. When it comes to
-          vegetables, the Keto lifestyle is limited to low carb substitutes like
-          spinach and mushrooms. Think of anything that comes from the ground as
-          being safe for the Ketogenic lifestyle. Almost all vegetables work
-          well with Paleo seeing as it’s a historically based diet from an era
-          where most foods were naturally occurring. Exceptions include potatoes
-          and corn.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Legumes</h2>
-        <p className="mb-6">
-          This one’s a big no for both diets. You’ve got to keep the beans to a
-          minimum to stay true to your lifestyle goals. Foods like lentils,
-          beans, peanuts and peas must be avoided.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Meats</h2>
-        <p className="mb-6">
-          This one is pretty straight forward. Both diets allow for most meats
-          and seafood, however, Paleo meats need to be free-range, wild-caught,
-          or grass-fed.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Grains</h2>
-        <p className="mb-6">
-          Simply put, no. There are ways to get creative, but most grains will
-          put you outside the scope of these two lifestyles.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Major Takeaways</h2>
-        <p className="mb-6">
-          For most, paleo is about more than just a diet. There is also a strong
-          focus on lifestyle practices, the environmental impact of food choices
-          and total body wellness within the framework of the paleo philosophy.
-          Paleo focuses on the mentality of hunter-gatherers during the
-          Paleolithic era and the stock they put into foods that would benefit
-          the tribe for staying alive from one winter to the next. Keto spends a
-          lot of time focusing on macronutrients (carbohydrates, fats, and
-          proteins) which make up the largest portion of our energy providing
-          foods. Targeting these ingredients helps to increase the way our body
-          breaks down nutrition and distributes it throughout our body. Because
-          both diets eliminate whole food groups, dietitians generally don’t
-          recommend either for long-term health, but both can be useful to help
-          get a handle on carb cravings and increase the number of veggies you
-          consume. These diets aren’t for everyone and they often serve
-          different roles for the phases of life you are in. It is important to
-          do your own research and consult with your doctor to ensure the steps
-          you take to live a cleaner lifestyle are right for you. We hope this
-          article gives you more clarity on the differences between the Paleo
-          and Keto diets and how committing to either one would put you one step
-          further down your path to becoming WellFed. To learn more about these
-          diets, please visit wellfed.us.
-        </p>
+        {/* Another Room Image or Additional Visual */}
+        <div className="w-full h-screen relative my-8">
+          <Image
+            src="/images/articles/dishes.jpeg"
+            alt="a kitchen sink with cups and dishes"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-lg"
+          />
+        </div>
       </section>
 
       {/* Citations Section */}
@@ -156,14 +132,33 @@ export default function ArticleOne() {
         <h3 className="text-xl font-semibold text-gray-900">Citations</h3>
         <ul className="list-disc list-inside mt-4 text-gray-700">
           <li>
-            Gunnars, K. and Kelly, E. (n.d.).&quot;The Paleo Diet — A Beginner’s Guide Plus Meal Plan&quot;. <em>Healthline</em>. <a href="https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu">The Paleo Diet- Beginner’s Guide Plus Meal Plan</a>
+            Cleveland Clinic (2023).&quot;Ketones: What They Are, Function,
+            Tests & Normal Levels.&quot;. <em>Cleveland Clinic.</em>{" "}
+            <a href="https://my.clevelandclinic.org/health/body/25177-ketones">
+              Ketones: What They Are, Function, Tests & Normal Levels
+            </a>
           </li>
           <li>
-            Ball, S. (n.d.). &quot;What’s the Difference between the Keto and Paleo Diets?&quot;
-            <em>Food Network.</em> <a href="https://www.foodnetwork.com/healthy/articles/whats-difference-between-keto-paleo-diet">What’s the Difference between the Keto and Paleo Diets?</a>
+            Cleveland Clinic (2022). &quot;What Is the Keto Diet and Should You
+            Try It?&quot;
+            <em>. Cleveland Clinic.</em>{" "}
+            <a href="https://health.clevelandclinic.org/what-is-the-keto-diet-and-should-you-try-it">
+              What Is the Keto Diet and Should You Try It?
+            </a>
           </li>
           <li>
-            Hill, A. (2023).&quot;What’s the Difference Between Paleo and Keto Diets?&quot;. <em>Healthline</em>. <a href="https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu">What’s the Difference Between Paleo and Keto Diets?  </a>
+            Harvard Medical School (2024).&quot;Should You Try The Keto
+            Diet?&quot;. <em>Harvard Health Publishing</em>.{" "}
+            <a href="https://www.health.harvard.edu/staying-healthy/should-you-try-the-keto-diet">
+              Should You Try The Keto Diet?{" "}
+            </a>
+          </li>
+          <li>
+            Rege, L. (2023).&quot;Keto Beef Stroganoff&quot;.{" "}
+            <em>Delish.com</em>.{" "}
+            <a href="https://www.delish.com/cooking/recipe-ideas/a30707105/keto-beef-stroganoff-recipe/">
+              Keto Beef Stroganoff{" "}
+            </a>
           </li>
           {/* Add more citations as needed */}
         </ul>

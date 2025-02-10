@@ -22,8 +22,8 @@ const articles: Article[] = [
     image: '/images/articles/meal-planning.jpg'
   },
   {
-    title: 'Understanding Macros',
-    description: 'Learn about proteins, carbs, and fats for a balanced diet.',
+    title: 'Five Best Foods to Eat When You are Sick',
+    description: 'In this article, we discuss the five best foods to eat whether you have nausea, cold-like symptoms, dehydration, or the flu.',
     slug: 'article-three',
     image: '/images/articles/macros.jpg'
   },

@@ -6,23 +6,21 @@ export default function ArticleOne() {
     <article className="max-w-3xl mx-auto py-10 px-4">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
-          Paleo Vs. Keto: Spot the Difference
+          Five Best Foods to Eat When You’re Sick
         </h1>
         <p className="text-gray-700 mt-2">
-          The Paleolithic and Ketogenic diets are two popular lifestyle choices
-          for those looking to improve their health. The Paleo diet focuses on
-          maintaining physical health through foods humans consumed thousands of
-          years ago as hunter-gatherers, while the Keto diet focuses on
-          improving weight loss through high fat, low carb solutions that limit
-          your body’s production of glucose.{" "}
+          In this article, we discuss the five best foods to eat whether you
+          have nausea, cold-like symptoms, dehydration, or the flu. Consuming
+          these foods will consistently provide fast sickness relief and
+          recovery.
         </p>
       </header>
 
       {/* Hero / Room Image */}
       <div className="w-full h-64 relative mb-8">
         <Image
-          src="/images/articles/size.jpeg" // A room-style image or environment image
-          alt="a measuring tape"
+          src="/images/articles/variety_food.jpeg" // A room-style image or environment image
+          alt="a variety of fruits and vegetables in a crate"
           layout="fill"
           objectFit="cover"
           className="rounded-lg"
@@ -31,123 +29,128 @@ export default function ArticleOne() {
 
       {/* Article Content */}
       <section className="prose prose-lg max-w-none text-gray-800 mb-6">
-        <p>
-          We spend a lot of time working on our health but what does that work
-          mean if we don’t know what we’re measuring. These two diets both
-          target different parts of the human diet to provide cleaner eating
-          habits and improved wellness overall. This article will focus on the
-          differences between the Paleolithic and Ketogenic diets and whether or
-          not these lifestyles are the right fit for you.
-        </p>
-        <br></br>
         <ol className="space-y-1">
           <span className="font-bold text-xl">Table of Contents</span>
-          <li>The Paleolithic Diet </li>
-          <li>The Ketogenic Diet</li>
-          <li>Similarities and Differences </li>
-          <li>Major Takeaways </li>
+          <li>What Foods should I eat? </li>
+          <li>What Foods should I Avoid? </li>
+          <li>Frequently Asked Questions </li>
         </ol>
         {/* ... Add more breakfast ideas ... */}
       </section>
       <section className="prose prose-lg max-w-none text-gray-800 mb-6">
-        <h2 className="font-semibold text-2xl">The Paleolithic Diet</h2>
+        <h2 className="font-semibold text-2xl">What Foods Should I Eat? </h2>
+        <p className="mb-6">
+          It may seem like you have no food options when you’re sick but that’s
+          not true. Many options, like broths and fruits, are beneficial if you
+          have the flu. Staying hydrated and nourished when sick with flu is
+          important, so simple, nutrient-filled meals are best. When you’re
+          feeling under the weather, there’s a tendency to eat foods that make
+          you feel good but aren’t good for you. Avoiding this is the key step
+          to a speedy recovery.
+        </p>
+        <p className="mb-6">
+          Chicken (noodle) soup is a great choice for those who are feeling any
+          kind of sickness. Its rich flavor, warm broth, and soft vegetables
+          allow you to gain all the required nutrients you need without any of
+          the bad stuff.
+        </p>
+        <p className="mb-6">
+          Garlic is another herb that’s easy to find and is considered as a
+          spice that promotes wellness. This is still true in today’s world, and
+          it’s recommended that garlic be one of the first home remedies you try
+          when you feel a sickness coming on. Promoting wellness oftentimes
+          means preventing all sickness from the jump.
+        </p>
+        <p className="mb-6">
+          Ginger is the last herb we’ll mention for promoting healthy recovery.
+          Its healing properties appear in ginger ale, ginger snaps, and even in
+          hot tea which makes it perhaps the most versatile choice on this list.
+          Some drinks that may help people with nausea include water, ginger
+          ale, ginger tea and peppermint tea. If you are dehydrated, try a drink
+          with electrolytes, but stay away from sugary versions. Ginger is a
+          great wellness option for nausea or headache symptoms. We’ve all had
+          those days where our head is killing us and ginger is often one of the
+          first remedies we turn to. That fact remains a constant in getting
+          well soon.
+        </p>
+        <h2 className="font-semibold text-2xl mb-2">
+          What Foods Should I Avoid?
+        </h2>
+        <p className="mb-6">
+          <b>Sugar</b> – causes inflammation which makes it harder for your body
+          to recover. Sugar is a major culprit for sickness and feeling sluggish
+          or slow to get up when you’re under the weather. Taking care to drink
+          things that are low in sugar or artificial sweetener while you recover
+          is a good step to preventing further illness.
+        </p>
+        <p className="mb-6">
+          <b>Caffeine</b> – can cause dehydration and is a stimulant that
+          prevents your body from getting the rest it needs. Caffeine is often
+          found in carbonated sodas, chocolate and most famously in coffee. All
+          of these food sources are rotten ideas for curing sickness. Getting
+          better sometimes requires that we sacrifice what’s comfortable for
+          what makes our body happy.
+        </p>
+        <p className="mb-6">
+          <b>Alcohol</b> – weakens the immune system making it harder for your
+          body to fight the illness. Alcohol has minimal healing properties and
+          that becomes even more accurate when you’re ill. Avoiding any and all
+          spirits until your body fully overcomes its sickness is highly
+          recommended.
+        </p>
         {/* Another Room Image or Additional Visual */}
         <div className="w-full h-64 relative my-8">
           <Image
-            src="/images/articles/paleo.jpeg" // Another environment/room-style image
-            alt="an avocado and herbs and tomatoes tossed for contrast on a cutting board"
+            src="/images/articles/soup.jpeg"
+            alt="a bowl of carrot soup with a spoon on a wooden table"
             layout="fill"
             objectFit="cover"
             className="rounded-lg"
           />
         </div>
-        <p className="mb-6">
-          The Paleo diet stands for Paleolithic which refers to that period in
-          time where humans relied on the hunter-gatherer social structure to
-          survive the harsh environments. The idea is to recreate the nutrients
-          and meals humans were eating in this period 10,000 years ago. By
-          following a diet of whole foods and leading physically active lives,
-          hunter-gatherers presumably had much lower rates of lifestyle
-          diseases, such as obesity, diabetes, and heart disease.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">The Ketogenic Diet</h2>
-        <p className="mb-6">
-          The Keto or Ketogenic diet represents a lifestyle based on increasing
-          fats and decreasing carbohydrates in the body. This process, known as
-          ketosis, can lead to your body switching out the glucose necessary for
-          energy production for ketones that are produced in the liver. This
-          diet allows for increased weight loss at an incredible rate because
-          your body relies on its secondary source of power, ketones. As a
-          result, the fat in your body burns more efficiently than it otherwise
-          would under normal circumstances.
-        </p>
         <h2 className="font-semibold text-2xl mb-2">
-          Similarities and Differences{" "}
+          Frequently Asked Questions
+        </h2>
+        <h2 className="font-semibold text-xl ml-4 m-2">
+          1. How long will it take for me to get better?
         </h2>
         <p className="mb-6">
-          As you’ve probably noticed, there are some key similarities and
-          differences between these two diets and we’re going to list out some
-          of the key things to note. Here’s our deep dive.
+          This question is tough to answer because it depends on you. Your body
+          and the sickness that it’s fighting will often determine how long
+          you’re under wraps. That being said, don’t rush this process. Only you
+          truly know when you feel better, so trust your gut and have faith in
+          your body’s ability to heal.
         </p>
-        <h2 className="font-semibold text-2xl mb-2">Dairy </h2>
+        <h2 className="font-semibold text-xl ml-4 m-2">
+          2. When should I visit the doctor?
+        </h2>
         <p className="mb-6">
-          Dairy is available to individuals on the Keto diet in the form of
-          select cheeses. However, yogurts and milks are usually high carb items
-          and won’t be viable. As for Paleo individuals, dairy won’t work if you
-          want the desired results.
+          Severe reactions to sickness such as fainting or passing out, skin
+          discoloration or sudden rashes, and high body temperature are all
+          potential warning signs that you may need professional medical
+          attention. Even so, following this guide is a great initial checklist
+          to help determine your sickness levels before you take that emergency
+          room trip
         </p>
-        <h2 className="font-semibold text-2xl mb-2">Fruits and Veggies </h2>
+        <h2 className="font-semibold text-xl ml-4 m-2">
+          3. Why does my body shut down when I’m sick?
+        </h2>
         <p className="mb-6">
-          Paleo prefers a variety of fruits while Keto needs fruits with low
-          carbohydrate amounts like blackberries and melons. Fruits are fair
-          game in most diets and these two are no exception. When it comes to
-          vegetables, the Keto lifestyle is limited to low carb substitutes like
-          spinach and mushrooms. Think of anything that comes from the ground as
-          being safe for the Ketogenic lifestyle. Almost all vegetables work
-          well with Paleo seeing as it’s a historically based diet from an era
-          where most foods were naturally occurring. Exceptions include potatoes
-          and corn.
+          It’s all in your immune system. Your body often tasks the immune
+          system with protecting itself from current and future sickness. This
+          means that the coughing, runny nose, and stuffiness you experience
+          when you’re sick is on purpose. Your immune system flips its
+          histamines switch and the internal fight begins. Once you’ve fully
+          recovered, these symptoms will clear up and you’ll be thanking your
+          immune system for the protection it provides. .
         </p>
-        <h2 className="font-semibold text-2xl mb-2">Legumes</h2>
         <p className="mb-6">
-          This one’s a big no for both diets. You’ve got to keep the beans to a
-          minimum to stay true to your lifestyle goals. Foods like lentils,
-          beans, peanuts and peas must be avoided.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Meats</h2>
-        <p className="mb-6">
-          This one is pretty straight forward. Both diets allow for most meats
-          and seafood, however, Paleo meats need to be free-range, wild-caught,
-          or grass-fed.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Grains</h2>
-        <p className="mb-6">
-          Simply put, no. There are ways to get creative, but most grains will
-          put you outside the scope of these two lifestyles.
-        </p>
-        <h2 className="font-semibold text-2xl mb-2">Major Takeaways</h2>
-        <p className="mb-6">
-          For most, paleo is about more than just a diet. There is also a strong
-          focus on lifestyle practices, the environmental impact of food choices
-          and total body wellness within the framework of the paleo philosophy.
-          Paleo focuses on the mentality of hunter-gatherers during the
-          Paleolithic era and the stock they put into foods that would benefit
-          the tribe for staying alive from one winter to the next. Keto spends a
-          lot of time focusing on macronutrients (carbohydrates, fats, and
-          proteins) which make up the largest portion of our energy providing
-          foods. Targeting these ingredients helps to increase the way our body
-          breaks down nutrition and distributes it throughout our body. Because
-          both diets eliminate whole food groups, dietitians generally don’t
-          recommend either for long-term health, but both can be useful to help
-          get a handle on carb cravings and increase the number of veggies you
-          consume. These diets aren’t for everyone and they often serve
-          different roles for the phases of life you are in. It is important to
-          do your own research and consult with your doctor to ensure the steps
-          you take to live a cleaner lifestyle are right for you. We hope this
-          article gives you more clarity on the differences between the Paleo
-          and Keto diets and how committing to either one would put you one step
-          further down your path to becoming WellFed. To learn more about these
-          diets, please visit wellfed.us.
+          Whether it’s a common cold or a full-blown infection, keeping your
+          body healthy year-round is a complicated task. Being health conscious
+          is not. At WellFed, we boost your knowledge of all things wellness by
+          meeting you where you are. To learn more about how we help you take
+          care of you better, please visit <a href="https://wellfed.us">wellfed.us.</a> It’s always a great day
+          to become WellFed.
         </p>
       </section>
 
@@ -156,14 +159,23 @@ export default function ArticleOne() {
         <h3 className="text-xl font-semibold text-gray-900">Citations</h3>
         <ul className="list-disc list-inside mt-4 text-gray-700">
           <li>
-            Gunnars, K. and Kelly, E. (n.d.).&quot;The Paleo Diet — A Beginner’s Guide Plus Meal Plan&quot;. <em>Healthline</em>. <a href="https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu">The Paleo Diet- Beginner’s Guide Plus Meal Plan</a>
+            Cleveland Clinic. (2024, August 12). <em>The Best Foods To Eat When You’re Sick</em>.{" "}
+            <a href="https://health.clevelandclinic.org/the-best-foods-to-eat-when-youre-sick">
+              The Best Foods To Eat When You’re Sick
+            </a>
           </li>
           <li>
-            Ball, S. (n.d.). &quot;What’s the Difference between the Keto and Paleo Diets?&quot;
-            <em>Food Network.</em> <a href="https://www.foodnetwork.com/healthy/articles/whats-difference-between-keto-paleo-diet">What’s the Difference between the Keto and Paleo Diets?</a>
+           Healthline. (n.d.).
+            <em>The 15 Best Foods To Eat When You’re Sick.</em>{" "}
+            <a href="https://www.healthline.com/nutrition/15-best-foods-when-sick#fa-qs">
+              The 15 Best Foods To Eat When You’re Sick
+            </a>
           </li>
           <li>
-            Hill, A. (2023).&quot;What’s the Difference Between Paleo and Keto Diets?&quot;. <em>Healthline</em>. <a href="https://www.healthline.com/nutrition/paleo-diet-meal-plan-and-menu">What’s the Difference Between Paleo and Keto Diets?  </a>
+            University of Maryland Medical System. (2024, January 10). <em>Wondering What To Eat When You’re Sick? Try These Comforting Foods. UMMS Health.</em>{" "}
+            <a href="https://health.umms.org/2024/01/10/what-to-eat-when-you-are-sick/">
+              Wondering What to Eat When You’re Sick? Try These Comforting Foods.
+            </a>
           </li>
           {/* Add more citations as needed */}
         </ul>
