@@ -2,7 +2,6 @@
 'use client'
 
 import { useRef } from 'react'
-import clsx from 'clsx'
 import { useInView } from 'framer-motion'
 
 import { Review } from '@/components/Review'

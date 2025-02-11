@@ -1,5 +1,6 @@
 // (main)/articles/index.tsx
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Article {
   title: string
@@ -38,7 +39,7 @@ export default function ArticlesIndex() {
       <ul className="space-y-8">
         {articles.map((article) => (
           <li key={article.slug} className="bg-white shadow-sm rounded-lg p-6">
-            <img src={article.image} alt={article.title} className="w-full h-40 object-cover rounded" />
+            <Image src={article.image} alt={article.title} className="w-full h-40 object-cover rounded" />
             <h2 className="text-xl font-bold mt-4">{article.title}</h2>
             <p className="text-gray-700 mt-2">{article.description}</p>
             <Link href={`/articles/${article.slug}`}
