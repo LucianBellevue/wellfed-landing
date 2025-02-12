@@ -1,7 +1,8 @@
 // app/page.tsx
 import { Articles } from '@/components/Articles';
-import { CallToAction } from '@/components/CallToAction'
+import { BannerSection } from '@/components/BannerSection';
 import { Faqs } from '@/components/Faqs'
+import { Features } from '@/components/Features';
 import { Hero } from '@/components/Hero'
 import { Reviews } from '@/components/Reviews'
 
@@ -9,7 +10,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <CallToAction />
+      <Features />
+      <BannerSection />
       <Articles />
       <Reviews />
       <Faqs />
