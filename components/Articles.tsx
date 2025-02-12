@@ -24,8 +24,8 @@ const articles: Article[] = [
     url: '/articles/article2',
   },
   {
-    title: 'Understanding Macros: Protein, Carbs, and Fats',
-    description: 'A beginner’s guide to macronutrients and how to balance them for optimal health.',
+    title: 'Five Best Foods to Eat When You are Sick',
+    description: 'In this article, we discuss the five best foods to eat whether you have nausea, cold-like symptoms, dehydration, or the flu.',
     image: '/images/articles/macros-guide.jpg',
     url: '/articles/article3',
   },

@@ -1,7 +1,7 @@
 // pages/articles/article-one.tsx
 import Image from "next/image";
 
-export default function ArticleOne() {
+export default function ArticleThree() {
   return (
     <article className="max-w-3xl mx-auto py-10 px-4">
       <header className="mb-8">

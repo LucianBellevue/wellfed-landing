@@ -17,8 +17,8 @@ const articles: Article[] = [
     image: '/images/articles/breakfast.jpg'
   },
   {
-    title: 'Meal Planning for Busy People',
-    description: 'Optimize your week with simple meal planning strategies.',
+    title: 'How to Make a Balanced Dinner Plate (Keto Edition)',
+    description: 'The Keto diet includes foods that are high in fat and low in carbohydrates like seafood, unprocessed cheese, meat and poultry and leafy vegetables',
     slug: 'article-two',
     image: '/images/articles/meal-planning.jpg'
   },
