@@ -52,7 +52,7 @@ export function Hero() {
               <AppStoreLink />
               <GoogleStoreLink url="https://play.google.com/store/apps/details?id=com.example.yourapp" />
               <Button
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                href="https://biteable.com/watch/4277806/9bf1d2fc53a65d17b8f1e45a3e5bbc41"
                 variant="outline"
                 color="primary"
                 className="relative z-10 border border-white/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40"
