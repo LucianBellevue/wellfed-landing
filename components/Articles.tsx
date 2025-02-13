@@ -14,19 +14,19 @@ const articles: Article[] = [
   {
     title: 'Paleo Vs. Keto: Spot the Difference',
     description: 'The Paleolithic and Ketogenic diets are two popular lifestyle choices for those looking to improve their health.',
-    image: '/images/articles/breakfast-ideas.jpg',
+    image: '/images/articles/breakfast-ideas.jpeg',
     url: '/articles/article1',
   },
   {
     title: 'How to Make a Balanced Dinner Plate (Keto Edition)',
     description: 'The Keto diet includes foods that are high in fat and low in carbohydrates like seafood, unprocessed cheese, meat and poultry and leafy vegetables',
-    image: '/images/articles/meal-planning.jpg',
+    image: '/images/articles/meal-planning.jpeg',
     url: '/articles/article2',
   },
   {
     title: 'Five Best Foods to Eat When You are Sick',
     description: 'In this article, we discuss the five best foods to eat whether you have nausea, cold-like symptoms, dehydration, or the flu.',
-    image: '/images/articles/macros-guide.jpg',
+    image: '/images/articles/macros-guide.jpeg',
     url: '/articles/article3',
   },
 ]

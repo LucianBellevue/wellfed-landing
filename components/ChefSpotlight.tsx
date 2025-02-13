@@ -27,10 +27,10 @@ export function ChefSpotlight() {
         {/* Interactive Collage */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "/images/chef5.jpg",
-            "/images/chef3.jpg",
-            "/images/chef2.jpg",
-            "/images/chef6.jpg"
+            "/images/chef5.jpeg",
+            "/images/chef3.jpeg",
+            "/images/chef2.jpeg",
+            "/images/chef6.jpeg"
           ].map((src, index) => (
             <motion.div
               key={index}
