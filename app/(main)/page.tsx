@@ -1,6 +1,7 @@
 // app/page.tsx
 import { Articles } from '@/components/Articles';
 import { BannerSection } from '@/components/BannerSection';
+import { ChefSpotlight } from '@/components/ChefSpotlight';
 import { Faqs } from '@/components/Faqs'
 import { Features } from '@/components/Features';
 import { Hero } from '@/components/Hero'
@@ -14,6 +15,7 @@ export default function HomePage() {
       <BannerSection />
       <Articles />
       <Reviews />
+      <ChefSpotlight />
       <Faqs />
     </>
   );
