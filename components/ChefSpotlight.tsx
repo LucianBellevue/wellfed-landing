@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 
 export function ChefSpotlight() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12">
       <Container>
         {/* Heading & Description */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
             Chef Spotlight
           </h2>
@@ -25,13 +25,11 @@ export function ChefSpotlight() {
           </p>
         </div>
         {/* Interactive Collage */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "/images/chef1.jpg",
-            "/images/chef2.jpg",
-            "/images/chef3.jpg",
-            "/images/chef4.jpg",
             "/images/chef5.jpg",
+            "/images/chef3.jpg",
+            "/images/chef2.jpg",
             "/images/chef6.jpg"
           ].map((src, index) => (
             <motion.div
