@@ -5,10 +5,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  images: {
-    loader: 'custom',
-    loaderFile: './my-loader.ts',
-  },
 };
 
 export default nextConfig;
