@@ -1,4 +1,5 @@
 // components/Hero.tsx
+'use client'
 import { AppDemo } from "@/components/AppDemo";
 import { AppStoreLink } from "@/components/AppStoreLink";
 import { GoogleStoreLink } from "@/components/GoogleStoreLink";
@@ -6,6 +7,7 @@ import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { PhoneFrame } from "@/components/PhoneFrame";
 import { BackgroundIllustration } from "@/components/BackgroundIllustration";
+import { useState } from 'react';
 
 function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -21,6 +23,8 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
 }
 
 export function Hero() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   return (
     <div
       className="relative overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 "
@@ -48,14 +52,14 @@ export function Hero() {
                 at a time.
               </p>
             </div>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-4">
               <AppStoreLink />
               <GoogleStoreLink url="https://play.google.com/store/apps/details?id=com.example.yourapp" />
               <Button
-                href="https://biteable.com/watch/4277806/9bf1d2fc53a65d17b8f1e45a3e5bbc41"
+                onClick={() => setIsVideoOpen(true)}
                 variant="outline"
                 color="primary"
-                className="relative z-10 border border-white/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40"
+                className="relative z-10 border border-white/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40 w-full sm:w-auto flex items-center justify-center"
               >
                 <PlayIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2.5">Watch how it works</span>
@@ -85,6 +89,28 @@ export function Hero() {
           <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6"></div>
         </div>
       </Container>
+
+      {/* Video Modal */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
+          <div className="relative w-full max-w-4xl">
+            <button
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute -top-10 right-0 text-white hover:text-gray-300"
+            >
+              Close
+            </button>
+            <div className="relative pt-[56.25%]">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://biteable.com/watch/embed/4277806/9bf1d2fc53a65d17b8f1e45a3e5bbc41"
+                allowFullScreen
+                allow="autoplay; fullscreen"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
