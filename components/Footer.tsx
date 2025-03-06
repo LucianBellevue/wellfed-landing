@@ -56,10 +56,12 @@ export function Footer() {
             <div className="relative flex h-24 w-24 flex-none items-center justify-center">
               <QrCodeBorder className="absolute inset-0 h-full w-full stroke-gray-300 transition-colors group-hover:stroke-secondary" />
               <Image
-                src="/images/qr-code.jpg"
+                src="/images/qr-code.jpeg"
                 alt="QR code for app download"
                 width={90}
                 height={90}
+                className="rounded-lg"
+                priority
               />
             </div>
             <div className="ml-8 lg:w-64">

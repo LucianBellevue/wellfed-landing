@@ -14,7 +14,7 @@ const articles: Article[] = [
   {
     title: 'Paleo Vs. Keto: Spot the Difference',
     description: 'The Paleolithic and Ketogenic diets are two popular lifestyle choices for those looking to improve their health.',
-    image: '/images/articles/breakfast-ideas.jpeg',
+    image: '/images/articles/breakfast-ideas.jpg',
     url: '/articles/article1',
   },
   {
