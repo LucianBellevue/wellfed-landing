@@ -59,6 +59,8 @@ export function PhoneFrame({
       <Image
         src={frame}
         alt="Phone frame"
+        width={366}
+        height={729}
         className="pointer-events-none absolute inset-0 h-full w-full"
         unoptimized
         priority={priority}

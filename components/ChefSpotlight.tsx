@@ -41,8 +41,9 @@ export function ChefSpotlight() {
               <Image
                 src={src}
                 alt={`Chef in action ${index + 1}`}
-                layout="fill"
-                objectFit="cover"
+                width={500}
+                height={300}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </motion.div>
           ))}

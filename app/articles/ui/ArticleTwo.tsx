@@ -32,9 +32,9 @@ export default function ArticleTwo() {
       <section className="prose prose-lg max-w-none text-gray-800 mb-6">
         <p>
           Eating on a ketogenic diet might seem difficult to some, but here at
-          WellFed we believe in making the complex simple. So, here’s your guide
+          WellFed we believe in making the complex simple. So, here's your guide
           to making a beautiful dinner plate that satisfies your keto diet,
-          whether you’re new to the ketogenic lifestyle or a seasoned pro.
+          whether you're new to the ketogenic lifestyle or a seasoned pro.
         </p>
         <br></br>
         <ol className="space-y-1">
@@ -50,15 +50,15 @@ export default function ArticleTwo() {
         <h2 className="font-semibold text-2xl">Ketosis: What is it?</h2>
         <p className="mb-6">
           Ketosis is a metabolic state in which your body uses fat for fuel
-          instead of carbs. Ketosis occurs when your body doesn’t have enough
+          instead of carbs. Ketosis occurs when your body doesn't have enough
           glucose in your blood to create energy. Instead, your body switches
           from being powered by glucose to being powered by ketones. These
           ketones come from your liver and act as a back-up energy source that
-          takes over when you don’t have enough glucose to turn into energy to
+          takes over when you don't have enough glucose to turn into energy to
           keep functioning throughout the day.
         </p>
         <p className="mb-6">
-          Ketones, or ketone bodies, are acids your body makes when it’s using
+          Ketones, or ketone bodies, are acids your body makes when it's using
           fat instead of glucose for energy. Your body typically gets most of
           its energy from glucose with ketones serving as your back-up energy
           source. Now that your body has switched over to burning fats instead
@@ -70,8 +70,8 @@ export default function ArticleTwo() {
           Why Choose a Ketogenic Diet?
         </h2>
         <p className="mb-6">
-          “Unlike other low-carb diets, which focus on protein, a keto plan
-          centers on fat, which supplies as much as 90% of daily calories.” The
+          "Unlike other low-carb diets, which focus on protein, a keto plan
+          centers on fat, which supplies as much as 90% of daily calories." The
           goal of a ketogenic diet is to burn fats at a quicker rate than you
           would on glucose sugar. This makes it one of the go-to lifestyle
           choices for people trying to lose weight or drop their blood glucose
@@ -100,7 +100,7 @@ export default function ArticleTwo() {
           ketogenic lifestyle. Some favorites here at WellFed include the Keto
           Beef Stroganoff and Copycat Ground Chicken Lettuce Wraps. These
           recipes are just the tip of the iceberg in terms of what you can still
-          eat while on your keto journey. Diet doesn’t mean gross, and the
+          eat while on your keto journey. Diet doesn't mean gross, and the
           ketogenic diet is a great example of how you can bring delicious
           flavor and tasty experiences to the dinner table every time.
         </p>
@@ -132,29 +132,29 @@ export default function ArticleTwo() {
         <h3 className="text-xl font-semibold text-gray-900">Citations</h3>
         <ul className="list-disc list-inside mt-4 text-gray-700">
           <li>
-            Cleveland Clinic (2023).&quot;Ketones: What They Are, Function,
-            Tests & Normal Levels.&quot;. <em>Cleveland Clinic.</em>{" "}
+            Cleveland Clinic (2023)."Ketones: What They Are, Function,
+            Tests & Normal Levels.". <em>Cleveland Clinic.</em>{" "}
             <a href="https://my.clevelandclinic.org/health/body/25177-ketones">
               Ketones: What They Are, Function, Tests & Normal Levels
             </a>
           </li>
           <li>
-            Cleveland Clinic (2022). &quot;What Is the Keto Diet and Should You
-            Try It?&quot;
+            Cleveland Clinic (2022). "What Is the Keto Diet and Should You
+            Try It?"
             <em>. Cleveland Clinic.</em>{" "}
             <a href="https://health.clevelandclinic.org/what-is-the-keto-diet-and-should-you-try-it">
               What Is the Keto Diet and Should You Try It?
             </a>
           </li>
           <li>
-            Harvard Medical School (2024).&quot;Should You Try The Keto
-            Diet?&quot;. <em>Harvard Health Publishing</em>.{" "}
+            Harvard Medical School (2024)."Should You Try The Keto
+            Diet?". <em>Harvard Health Publishing</em>.{" "}
             <a href="https://www.health.harvard.edu/staying-healthy/should-you-try-the-keto-diet">
               Should You Try The Keto Diet?{" "}
             </a>
           </li>
           <li>
-            Rege, L. (2023).&quot;Keto Beef Stroganoff&quot;.{" "}
+            Rege, L. (2023)."Keto Beef Stroganoff".{" "}
             <em>Delish.com</em>.{" "}
             <a href="https://www.delish.com/cooking/recipe-ideas/a30707105/keto-beef-stroganoff-recipe/">
               Keto Beef Stroganoff{" "}

@@ -13,7 +13,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: 'Features', href: '/#features' },
   { label: 'Reviews', href: '/#reviews' },
-  { label: 'Articles', href: '/#articles' },
+  { label: 'Articles', href: '/articles-index' },
   { label: 'FAQs', href: '/#faqs' },
 ]
 
@@ -67,7 +67,7 @@ export function NavLinks() {
         </Link>
       )
     })
-  }, [pathname])
+  }, [pathname, hoveredIndex])
 
   return <>{navLinks}</>
 }

@@ -25,63 +25,87 @@ export function Features() {
   const phoneRotateY = useTransform(scrollYProgress, [0.1, 0.3, 0.5], [0, 0, 5])
   
   return (
-    <section id="features" className="pt-48 pb-40 relative overflow-hidden bg-white" ref={sectionRef}>
+    <section id="features" className="pt-40 pb-32 relative overflow-hidden bg-white" ref={sectionRef}>
       {/* Simple white background */}
       
-      {/* Background is kept clean without decorative elements */}
+      {/* Decorative Elements - React to activeFeature */}
+      <!-- div start --><div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          className="absolute top-40 right-1/4 w-24 h-24 rounded-full border-4 border-primary/20"
+          animate={{ 
+            rotate: 360,
+            borderWidth: activeFeature === 1 ? 6 : 4,
+            borderColor: activeFeature === 1 ? "rgba(var(--color-primary), 0.3)" : "rgba(var(--color-primary), 0.2)"
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute bottom-20 left-1/3 w-16 h-16 rounded-full border-4 border-secondary/20"
+          animate={{ 
+            rotate: -360,
+            borderWidth: activeFeature === 0 ? 6 : 4,
+            borderColor: activeFeature === 0 ? "rgba(var(--color-secondary), 0.3)" : "rgba(var(--color-secondary), 0.2)"
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
       
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-x-12 lg:gap-y-24 pt-10 lg:pt-20">
-          {/* Text Content - Positioned to overlap with phone */}
-          <motion.div 
-            className="lg:col-span-6 xl:col-span-5 z-20 relative px-1 sm:px-0 lg:mt-28"
-            style={{ opacity: titleOpacity, y: titleY }}
-          >
-            <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary drop-shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              <span className="block">Simplify Your</span>
-              <span className="block mt-1">Healthy Eating</span>
-              <motion.span 
-                className="inline-block text-secondary"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.9 }}
-              >
-                Journey
-              </motion.span>
-            </motion.h2>
-            
-            <motion.div 
-              className="mt-6 rounded-md bg-white/90 p-6 backdrop-blur-sm shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              <p className="text-lg text-gray-800 leading-relaxed">
-                WellFed combines AI-powered meal planning, personalized recipes, and smart grocery lists to make healthy eating effortless and enjoyable.
-              </p>
-            </motion.div>
-          </motion.div>
-
-          {/* Phone display - Enhanced with animations and positioned to overlap with text on larger screens */}
+      <Container className="relative z-10">
+        <!-- div start --><div className="text-center px-4 sm:px-6 md:px-8 lg:px-10 pt-10 lg:pt-20">
           <motion.div
-            className="relative z-10 mx-auto max-w-[366px] lg:col-span-6 xl:col-span-7 lg:ml-auto mt-8 lg:mt-0"
-            style={{ 
-              scale: phoneScale, 
-              opacity: phoneOpacity,
-              rotateY: phoneRotateY
-            }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 50 }}
+            className="relative z-30"
           >
-            <PhoneSlideshow activeFeature={activeFeature} />
+            <motion.div
+              className="absolute -inset-10 bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg -z-10"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            />
+            <motion.h2
+              style={{ opacity: titleOpacity, y: titleY }}
+              className="text-4xl sm:text-5xl font-bold relative inline-block"
+            >
+              <span className="text-primary drop-shadow-sm">AI-Powered Personalization</span>
+            </motion.h2>
+            <motion.p
+              style={{ opacity: titleOpacity, y: titleY }}
+              transition={{ delay: 0.2 }}
+              className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto font-medium leading-relaxed"
+            >
+              Our state-of-the-art AI learns your taste and flavor profile with every interaction, delivering
+              personalized recipes and meal plans tailored just for you.
+            </motion.p>
           </motion.div>
         </div>
+
+        {/* Enhanced Floating Phone with App Screenshots */}
+        <motion.div 
+          className="mt-24 mb-32"
+          style={{ 
+            opacity: phoneOpacity, 
+            scale: phoneScale,
+            rotateY: phoneRotateY
+          }}
+          whileInView={{ 
+            x: [20, 0],
+            transition: { 
+              duration: 1, 
+              type: "spring", 
+              stiffness: 50 
+            } 
+          }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <PhoneSlideshow />
+        </motion.div>
         
-        {/* Features grid - Enhanced with better spacing and animations */}
-        <div className="grid grid-cols-1 gap-y-16 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 relative z-20 mt-24 lg:mt-36">
+        {/* Features Grid with Cards - Enhanced with more prominent images */}
+        <!-- div start --><div className="grid grid-cols-1 gap-y-16 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 relative z-20">
           {/* Feature 1 - Enhanced with larger image and better visibility */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -93,14 +117,15 @@ export function Features() {
             onHoverEnd={() => setActiveFeature(null)}
           >
             {/* Card with enhanced image display */}
-            <div className="relative z-10 rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 group-hover:shadow-xl overflow-hidden h-full flex flex-col">
+            <!-- div start --><div className="relative z-10 rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 group-hover:shadow-xl overflow-hidden h-full flex flex-col">
               {/* Larger, more prominent image */}
-              <div className="relative h-56 overflow-hidden">
+              <!-- div start --><div className="relative h-56 overflow-hidden">
                 <Image
                   src="/images/healthy-person-1.jpeg"
-                  alt="Person enjoying healthy meal"
+                  alt="Person enjoying a healthy meal"
                   width={600}
                   height={400}
+                  priority
                   sizes="(max-width: 768px) 100vw, 400px"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   quality={90}
@@ -108,7 +133,7 @@ export function Features() {
                 />
                 
                 {/* Subtle gradient overlay that preserves image visibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 group-hover:opacity-70 transition-opacity duration-300" />
+                <!-- div start --><div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 group-hover:opacity-70 transition-opacity duration-300" />
                 
                 {/* Floating label on the image */}
                 <motion.div 
@@ -122,33 +147,32 @@ export function Features() {
               </div>
               
               {/* Enhanced content area */}
-              <div className="p-6 flex-1 flex flex-col">
+              <!-- div start --><div className="p-6 flex-1 flex flex-col">
                 {/* Icon with animated background */}
-                <div className="inline-flex rounded-xl bg-primary/10 p-3 mb-4">
+                <!-- div start --><div className="inline-flex rounded-xl bg-primary/10 p-3 mb-4">
                   <motion.div
                     animate={{ rotate: [0, 5, 0, -5, 0] }}
                     transition={{ duration: 5, repeat: Infinity, repeatType: "loop" }}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   </motion.div>
                 </div>
                 
                 <h3 className="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors duration-300">
-                  AI-Powered Recommendations
+                  AI Taste Profiling
                 </h3>
                 <p className="mt-3 text-gray-600 leading-relaxed flex-1">
-                  Our advanced AI analyzes your preferences and dietary needs to suggest meals that are perfect for you and your lifestyle.
+                  Our AI learns your unique flavor profile to deliver recipes that perfectly match your palate, adapting to your preferences over time.
                 </p>
-
               </div>
               
               {/* Enhanced gradient border effect */}
-              <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 transition-all duration-300 group-hover:opacity-100 pointer-events-none" />
+              <!-- div start --><div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 transition-all duration-300 group-hover:opacity-100 pointer-events-none" />
             </div>
           </motion.div>
-          
+
           {/* Feature 2 - Enhanced with larger image and better visibility */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -160,12 +184,12 @@ export function Features() {
             onHoverEnd={() => setActiveFeature(null)}
           >
             {/* Card with enhanced image display */}
-            <div className="relative z-10 rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 group-hover:shadow-xl overflow-hidden h-full flex flex-col">
+            <!-- div start --><div className="relative z-10 rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 group-hover:shadow-xl overflow-hidden h-full flex flex-col">
               {/* Larger, more prominent image */}
-              <div className="relative h-56 overflow-hidden">
+              <!-- div start --><div className="relative h-56 overflow-hidden">
                 <Image
                   src="/images/healthy-person-2.jpeg"
-                  alt="Person preparing healthy ingredients"
+                  alt="Group of friends enjoying healthy food"
                   width={600}
                   height={400}
                   sizes="(max-width: 768px) 100vw, 400px"
@@ -175,7 +199,7 @@ export function Features() {
                 />
                 
                 {/* Subtle gradient overlay that preserves image visibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 group-hover:opacity-70 transition-opacity duration-300" />
+                <!-- div start --><div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 group-hover:opacity-70 transition-opacity duration-300" />
                 
                 {/* Floating label on the image */}
                 <motion.div 
@@ -189,9 +213,9 @@ export function Features() {
               </div>
               
               {/* Enhanced content area */}
-              <div className="p-6 flex-1 flex flex-col">
+              <!-- div start --><div className="p-6 flex-1 flex flex-col">
                 {/* Icon with animated background */}
-                <div className="inline-flex rounded-xl bg-primary/10 p-3 mb-4">
+                <!-- div start --><div className="inline-flex rounded-xl bg-primary/10 p-3 mb-4">
                   <motion.div
                     animate={{ rotate: [0, 5, 0, -5, 0] }}
                     transition={{ duration: 5, repeat: Infinity, repeatType: "loop", delay: 0.5 }}
@@ -209,10 +233,9 @@ export function Features() {
                   Enjoy a curated selection of recipes that evolve with your feedback and preferences, ensuring every meal is something you&apos;ll love.
                 </p>
 
-              </div>
               
               {/* Enhanced gradient border effect */}
-              <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 transition-all duration-300 group-hover:opacity-100 pointer-events-none" />
+              <!-- div start --><div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 transition-all duration-300 group-hover:opacity-100 pointer-events-none" />
             </div>
           </motion.div>
 
@@ -227,9 +250,9 @@ export function Features() {
             onHoverEnd={() => setActiveFeature(null)}
           >
             {/* Card with enhanced image display */}
-            <div className="relative z-10 rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 group-hover:shadow-xl overflow-hidden h-full flex flex-col">
+            <!-- div start --><div className="relative z-10 rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 transition-all duration-300 group-hover:shadow-xl overflow-hidden h-full flex flex-col">
               {/* Larger, more prominent image */}
-              <div className="relative h-56 overflow-hidden">
+              <!-- div start --><div className="relative h-56 overflow-hidden">
                 <Image
                   src="/images/healthy-person-3.jpeg"
                   alt="Individual cooking healthy food"
@@ -242,7 +265,7 @@ export function Features() {
                 />
                 
                 {/* Subtle gradient overlay that preserves image visibility */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 group-hover:opacity-70 transition-opacity duration-300" />
+                <!-- div start --><div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/30 group-hover:opacity-70 transition-opacity duration-300" />
                 
                 {/* Floating label on the image */}
                 <motion.div 
@@ -256,9 +279,9 @@ export function Features() {
               </div>
               
               {/* Enhanced content area */}
-              <div className="p-6 flex-1 flex flex-col">
+              <!-- div start --><div className="p-6 flex-1 flex flex-col">
                 {/* Icon with animated background */}
-                <div className="inline-flex rounded-xl bg-primary/10 p-3 mb-4">
+                <!-- div start --><div className="inline-flex rounded-xl bg-primary/10 p-3 mb-4">
                   <motion.div
                     animate={{ rotate: [0, 5, 0, -5, 0] }}
                     transition={{ duration: 5, repeat: Infinity, repeatType: "loop", delay: 1 }}
@@ -275,11 +298,9 @@ export function Features() {
                 <p className="mt-3 text-gray-600 leading-relaxed flex-1">
                   Let our AI help you effortlessly plan your meals, saving time and ensuring balanced nutrition throughout your week.
                 </p>
-
-              </div>
-              
+                
               {/* Enhanced gradient border effect */}
-              <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 transition-all duration-300 group-hover:opacity-100 pointer-events-none" />
+              <!-- div start --><div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 transition-all duration-300 group-hover:opacity-100 pointer-events-none" />
             </div>
           </motion.div>
         </div>

@@ -6,8 +6,9 @@ import { GoogleStoreLink } from "@/components/GoogleStoreLink";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { PhoneFrame } from "@/components/PhoneFrame";
-import { BackgroundIllustration } from "@/components/BackgroundIllustration";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
 
 function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -24,93 +25,198 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
 
 export function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const headerControls = useAnimation();
+  
+  // Parallax effect for background image
+  const bgYPosition = useTransform(scrollY, [0, 500], ['0%', '20%']);
+  
+  // Trigger animations when component mounts
+  useEffect(() => {
+    headerControls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    });
+  }, [headerControls]);
 
   return (
-    <div
-      className="relative overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 "
-      style={{
-        backgroundImage: "url('/images/hero-food-bg.jpeg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Gradient at the bottom to blend into gray-50 */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-gray-50" />
+    <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 xl:pb-36">
+      {/* Background Image with Parallax */}
+      <motion.div 
+        className="absolute inset-0 z-0"
+        style={{ y: bgYPosition }}
+      >
+        <Image
+          src="/images/hero-food-bg.jpeg"
+          alt="Healthy food background"
+          fill
+          priority
+          sizes="100vw"
+          quality={90}
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
+      </motion.div>
+      
+      {/* Gradient overlay to blend into white background */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-gradient-to-b from-transparent to-white" />
 
-      <Container>
-        <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20 relative">
+      <Container className="relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 lg:gap-x-8 lg:gap-y-20">
           {/* Text Content */}
-          <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
-            <h1 className="text-4xl font-semibold tracking-tight text-primary drop-shadow-md">
-              Cook smarter, eat better with WellFed
-            </h1>
-            <div className="mt-6 inline-block rounded-md bg-white/80 p-4 backdrop-blur-sm">
+          <motion.div 
+            className="lg:col-span-6 xl:col-span-5 z-10 relative px-1 sm:px-0"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.h1 
+              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary drop-shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <span className="block">Cook smarter,</span>
+              <span className="block mt-1">eat better with</span>
+              <motion.span 
+                className="inline-block text-secondary"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.9 }}
+              >
+                WellFed
+              </motion.span>
+            </motion.h1>
+            
+            <motion.div 
+              className="mt-6 rounded-md bg-white/80 p-6 backdrop-blur-sm shadow-lg"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
               <p className="text-lg text-gray-800">
                 Discover nutritious recipes tailored to your tastes, schedule
                 meals with ease, and enjoy personalized ingredient suggestions.
                 WellFed helps you build healthy eating habits, one delicious meal
                 at a time.
               </p>
-            </div>
-            <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-4">
-              <AppStoreLink />
-              <GoogleStoreLink url="https://play.google.com/store/apps/details?id=com.example.yourapp" />
-              <Button
-                onClick={() => setIsVideoOpen(true)}
-                variant="outline"
-                color="primary"
-                className="relative z-10 border border-white/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40 w-full sm:w-auto flex items-center justify-center"
-              >
-                <PlayIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2.5">Watch how it works</span>
-              </Button>
-            </div>
-          </div>
-
-          {/* Phone Frame & Background */}
-          <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
-            <BackgroundIllustration
-              src="/images/hero-food-bg.jpeg"
-              alt="A vibrant dish of healthy food"
-              className="absolute inset-0"
-              gradient={false}
-            />
-            <div
-              className="-mx-4 h-[448px] px-9
-                            sm:mx-0 lg:absolute lg:-inset-x-10 lg:-bottom-20 lg:-top-10 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32 relative z-10"
+            </motion.div>
+            
+            <motion.div 
+              className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-4 mb-16 sm:mb-20 md:mb-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
             >
-              <PhoneFrame className="mx-auto max-w-[366px]" priority>
-                <AppDemo />
-              </PhoneFrame>
+              <motion.div 
+                whileHover={{ scale: 1.05 }} 
+                transition={{ type: "spring", stiffness: 400 }}
+                className="shadow-lg"
+              >
+                <AppStoreLink color="white" />
+              </motion.div>
+              
+              <motion.div 
+                whileHover={{ scale: 1.05 }} 
+                transition={{ type: "spring", stiffness: 400 }}
+                className="shadow-lg"
+              >
+                <GoogleStoreLink url="https://play.google.com/store/apps/details?id=com.example.yourapp" />
+              </motion.div>
+              
+              <motion.div 
+                whileHover={{ scale: 1.05 }} 
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                <Button
+                  onClick={() => setIsVideoOpen(true)}
+                  variant="outline"
+                  color="primary"
+                  className="relative z-10 border border-white/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40 w-full sm:w-auto flex items-center justify-center"
+                >
+                  <PlayIcon className="h-6 w-6 flex-none" />
+                  <span className="ml-2.5">Watch how it works</span>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          {/* Phone Frame - Positioned to overlap with Features section */}
+          <div className="lg:col-span-6 xl:col-span-7 relative mt-0 lg:mt-0">
+            <div className="relative h-0 md:h-[500px] lg:h-[600px]">
+              <motion.div
+                className="absolute left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-auto md:right-0 top-[-120px] sm:top-[-140px] md:top-auto md:bottom-[-80px] lg:bottom-[-120px] xl:bottom-[-180px] z-20 w-[280px] sm:w-[320px] md:w-[366px] max-w-full"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                style={{
+                  filter: 'drop-shadow(0 25px 25px rgba(0,0,0,0.15))',
+                }}
+              >
+                <motion.div
+                  animate={{ 
+                    y: [0, -10, 0],
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    repeatType: "reverse", 
+                    ease: "easeInOut" 
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.02, rotate: -1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="transform scale-90 sm:scale-95 md:scale-100"
+                  >
+                    <PhoneFrame className="mx-auto" priority>
+                      <AppDemo />
+                    </PhoneFrame>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
-
-          {/* Additional layout element if needed */}
-          <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6"></div>
         </div>
       </Container>
 
       {/* Video Modal */}
       {isVideoOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 p-4">
-          <div className="relative w-full max-w-4xl">
-            <button
+        <motion.div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.div 
+            className="relative w-full max-w-4xl"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+          >
+            <motion.button
               onClick={() => setIsVideoOpen(false)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300"
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 flex items-center gap-2 text-lg font-medium"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
               Close
-            </button>
-            <div className="relative pt-[56.25%]">
+            </motion.button>
+            <div className="relative pt-[56.25%] rounded-xl overflow-hidden shadow-2xl">
               <iframe
                 className="absolute inset-0 h-full w-full"
                 src="https://biteable.com/watch/embed/4277806/9bf1d2fc53a65d17b8f1e45a3e5bbc41"
                 allowFullScreen
-                allow="autoplay; fullscreen"
-              />
+                allow="autoplay"
+              ></iframe>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
-    </div>
+    </section>
   );
 }

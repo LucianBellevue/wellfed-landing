@@ -25,63 +25,60 @@ export function Features() {
   const phoneRotateY = useTransform(scrollYProgress, [0.1, 0.3, 0.5], [0, 0, 5])
   
   return (
-    <section id="features" className="pt-48 pb-40 relative overflow-hidden bg-white" ref={sectionRef}>
+    <section id="features" className="pt-40 pb-32 relative overflow-hidden bg-white" ref={sectionRef}>
       {/* Simple white background */}
       
-      {/* Background is kept clean without decorative elements */}
+      {/* Decorative Elements - React to activeFeature */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          className="absolute top-40 right-1/4 w-24 h-24 rounded-full border-4 border-primary/20"
+          animate={{ 
+            rotate: 360,
+            borderWidth: activeFeature === 1 ? 6 : 4,
+            borderColor: activeFeature === 1 ? "rgba(var(--color-primary), 0.3)" : "rgba(var(--color-primary), 0.2)"
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute bottom-20 left-1/3 w-16 h-16 rounded-full border-4 border-secondary/20"
+          animate={{ 
+            rotate: -360,
+            borderWidth: activeFeature === 0 ? 6 : 4,
+            borderColor: activeFeature === 0 ? "rgba(var(--color-secondary), 0.3)" : "rgba(var(--color-secondary), 0.2)"
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
       
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-x-12 lg:gap-y-24 pt-10 lg:pt-20">
-          {/* Text Content - Positioned to overlap with phone */}
-          <motion.div 
-            className="lg:col-span-6 xl:col-span-5 z-20 relative px-1 sm:px-0 lg:mt-28"
-            style={{ opacity: titleOpacity, y: titleY }}
-          >
-            <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary drop-shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-            >
-              <span className="block">Simplify Your</span>
-              <span className="block mt-1">Healthy Eating</span>
-              <motion.span 
-                className="inline-block text-secondary"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.9 }}
-              >
-                Journey
-              </motion.span>
-            </motion.h2>
-            
-            <motion.div 
-              className="mt-6 rounded-md bg-white/90 p-6 backdrop-blur-sm shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-            >
-              <p className="text-lg text-gray-800 leading-relaxed">
-                WellFed combines AI-powered meal planning, personalized recipes, and smart grocery lists to make healthy eating effortless and enjoyable.
-              </p>
-            </motion.div>
-          </motion.div>
-
-          {/* Phone display - Enhanced with animations and positioned to overlap with text on larger screens */}
+        <div className="text-center px-4 sm:px-6 md:px-8 lg:px-10 pt-10 lg:pt-20">
           <motion.div
-            className="relative z-10 mx-auto max-w-[366px] lg:col-span-6 xl:col-span-7 lg:ml-auto mt-8 lg:mt-0"
-            style={{ 
-              scale: phoneScale, 
-              opacity: phoneOpacity,
-              rotateY: phoneRotateY
-            }}
+            style={{ opacity: titleOpacity, y: titleY }}
+            className="max-w-3xl mx-auto"
           >
-            <PhoneSlideshow activeFeature={activeFeature} />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+              Simplify Your Healthy Eating Journey
+            </h2>
+            <p className="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
+              WellFed combines AI-powered meal planning, personalized recipes, and smart grocery lists to make healthy eating effortless and enjoyable.
+            </p>
           </motion.div>
         </div>
         
+        {/* Phone display - Enhanced with animations */}
+        <motion.div
+          className="relative z-10 mx-auto max-w-[366px] mt-16 mb-24"
+          style={{ 
+            scale: phoneScale, 
+            opacity: phoneOpacity,
+            rotateY: phoneRotateY
+          }}
+        >
+          <PhoneSlideshow activeFeature={activeFeature} />
+        </motion.div>
+        
         {/* Features grid - Enhanced with better spacing and animations */}
-        <div className="grid grid-cols-1 gap-y-16 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 relative z-20 mt-24 lg:mt-36">
+        <div className="grid grid-cols-1 gap-y-16 gap-x-8 sm:grid-cols-2 lg:grid-cols-3 relative z-20">
           {/* Feature 1 - Enhanced with larger image and better visibility */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -141,7 +138,19 @@ export function Features() {
                 <p className="mt-3 text-gray-600 leading-relaxed flex-1">
                   Our advanced AI analyzes your preferences and dietary needs to suggest meals that are perfect for you and your lifestyle.
                 </p>
-
+                
+                {/* Learn more link with animation */}
+                <motion.div 
+                  className="mt-4 inline-flex items-center text-sm font-medium text-primary"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.div>
               </div>
               
               {/* Enhanced gradient border effect */}
@@ -208,7 +217,19 @@ export function Features() {
                 <p className="mt-3 text-gray-600 leading-relaxed flex-1">
                   Enjoy a curated selection of recipes that evolve with your feedback and preferences, ensuring every meal is something you&apos;ll love.
                 </p>
-
+                
+                {/* Learn more link with animation */}
+                <motion.div 
+                  className="mt-4 inline-flex items-center text-sm font-medium text-primary"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.div>
               </div>
               
               {/* Enhanced gradient border effect */}
@@ -275,7 +296,19 @@ export function Features() {
                 <p className="mt-3 text-gray-600 leading-relaxed flex-1">
                   Let our AI help you effortlessly plan your meals, saving time and ensuring balanced nutrition throughout your week.
                 </p>
-
+                
+                {/* Learn more link with animation */}
+                <motion.div 
+                  className="mt-4 inline-flex items-center text-sm font-medium text-primary"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  Learn more
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.div>
               </div>
               
               {/* Enhanced gradient border effect */}

@@ -1,4 +1,4 @@
-// (main)/articles/index.tsx
+// articles-index/page.tsx
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -13,19 +13,19 @@ const articles: Article[] = [
   {
     title: 'Paleo Vs. Keto: Spot the Difference',
     description: 'The Paleolithic and Ketogenic diets are two popular lifestyle choices for those looking to improve their health.',
-    slug: 'article-one',
+    slug: 'article1',
     image: '/images/articles/breakfast.jpeg'
   },
   {
     title: 'How to Make a Balanced Dinner Plate (Keto Edition)',
     description: 'The Keto diet includes foods that are high in fat and low in carbohydrates like seafood, unprocessed cheese, meat and poultry and leafy vegetables',
-    slug: 'article-two',
+    slug: 'article2',
     image: '/images/articles/meal-planning.jpeg'
   },
   {
     title: 'Five Best Foods to Eat When You are Sick',
     description: 'In this article, we discuss the five best foods to eat whether you have nausea, cold-like symptoms, dehydration, or the flu.',
-    slug: 'article-three',
+    slug: 'article3',
     image: '/images/articles/macros.jpeg'
   },
 ]

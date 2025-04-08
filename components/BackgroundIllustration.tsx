@@ -25,9 +25,11 @@ export function BackgroundIllustration({
       <Image
         src={src}
         alt={alt}
-        fill
+        width={1920}
+        height={1080}
         priority
-        className="object-cover object-center"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        className="absolute inset-0"
         aria-hidden="true"
       />
       {gradient && (

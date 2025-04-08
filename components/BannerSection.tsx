@@ -3,6 +3,7 @@
 
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const pieceVariants = {
   hidden: (custom: number) => {
@@ -48,79 +49,127 @@ export function BannerSection() {
           custom={0}
           variants={pieceVariants}
           transition={{ duration: 1, delay: 0.2 }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: "url('/images/healthy.jpeg')",
-            backgroundSize: '300% 200%',
-            backgroundPosition: '0% 0%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+          className="w-full h-full relative overflow-hidden"
+        >
+          <div className="absolute inset-0">
+            <Image
+              src="/images/healthy.jpeg"
+              alt="Healthy food section"
+              fill
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: '0% 0%',
+                transform: 'scale(3)',
+                transformOrigin: '0% 0%'
+              }}
+            />
+          </div>
+        </motion.div>
         {/* Piece 1: Top-Center */}
         <motion.div
           custom={1}
           variants={pieceVariants}
           transition={{ duration: 1, delay: 0.4 }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: "url('/images/healthy.jpeg')",
-            backgroundSize: '300% 200%',
-            backgroundPosition: '50% 0%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+          className="w-full h-full relative overflow-hidden"
+        >
+          <div className="absolute inset-0">
+            <Image
+              src="/images/healthy.jpeg"
+              alt="Healthy food section"
+              fill
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: '50% 0%',
+                transform: 'scale(3)',
+                transformOrigin: '50% 0%'
+              }}
+            />
+          </div>
+        </motion.div>
         {/* Piece 2: Top-Right */}
         <motion.div
           custom={2}
           variants={pieceVariants}
           transition={{ duration: 1, delay: 0.6 }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: "url('/images/healthy.jpeg')",
-            backgroundSize: '300% 200%',
-            backgroundPosition: '100% 0%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+          className="w-full h-full relative overflow-hidden"
+        >
+          <div className="absolute inset-0">
+            <Image
+              src="/images/healthy.jpeg"
+              alt="Healthy food section"
+              fill
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: '100% 0%',
+                transform: 'scale(3)',
+                transformOrigin: '100% 0%'
+              }}
+            />
+          </div>
+        </motion.div>
         {/* Piece 3: Bottom-Left */}
         <motion.div
           custom={3}
           variants={pieceVariants}
           transition={{ duration: 1, delay: 0.8 }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: "url('/images/healthy.jpeg')",
-            backgroundSize: '300% 200%',
-            backgroundPosition: '0% 100%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+          className="w-full h-full relative overflow-hidden"
+        >
+          <div className="absolute inset-0">
+            <Image
+              src="/images/healthy.jpeg"
+              alt="Healthy food section"
+              fill
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: '0% 100%',
+                transform: 'scale(3)',
+                transformOrigin: '0% 100%'
+              }}
+            />
+          </div>
+        </motion.div>
         {/* Piece 4: Bottom-Center */}
         <motion.div
           custom={4}
           variants={pieceVariants}
           transition={{ duration: 1, delay: 1.0 }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: "url('/images/healthy.jpeg')",
-            backgroundSize: '300% 200%',
-            backgroundPosition: '50% 100%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+          className="w-full h-full relative overflow-hidden"
+        >
+          <div className="absolute inset-0">
+            <Image
+              src="/images/healthy.jpeg"
+              alt="Healthy food section"
+              fill
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: '50% 100%',
+                transform: 'scale(3)',
+                transformOrigin: '50% 100%'
+              }}
+            />
+          </div>
+        </motion.div>
         {/* Piece 5: Bottom-Right */}
         <motion.div
           custom={5}
           variants={pieceVariants}
           transition={{ duration: 1, delay: 1.2 }}
-          className="w-full h-full"
-          style={{
-            backgroundImage: "url('/images/healthy.jpeg')",
-            backgroundSize: '300% 200%',
-            backgroundPosition: '100% 100%',
-            backgroundRepeat: 'no-repeat',
-          }}
-        />
+          className="w-full h-full relative overflow-hidden"
+        >
+          <div className="absolute inset-0">
+            <Image
+              src="/images/healthy.jpeg"
+              alt="Healthy food section"
+              fill
+              style={{ 
+                objectFit: 'cover',
+                objectPosition: '100% 100%',
+                transform: 'scale(3)',
+                transformOrigin: '100% 100%'
+              }}
+            />
+          </div>
+        </motion.div>
       </motion.div>
 
       {/* Overlapping Banner Text */}

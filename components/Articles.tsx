@@ -52,8 +52,10 @@ export function Articles() {
                 <Image
                   src={article.image}
                   alt={article.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  width={600}
+                  height={300}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  className="transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">

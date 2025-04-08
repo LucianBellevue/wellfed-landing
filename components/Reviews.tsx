@@ -3,6 +3,7 @@
 
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import Image from 'next/image'
 
 import { Review } from '@/components/Review'
 
@@ -53,11 +54,17 @@ export function Reviews() {
     <section
       id="reviews"
       aria-labelledby="reviews-title"
-      className="relative py-20 sm:py-32 bg-cover bg-center"
-      style={{
-        backgroundImage: "url('/images/wood-table.jpeg')", // Ensure this image exists in your public/images directory
-      }}
+      className="relative py-20 sm:py-32"
     >
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/wood-table.jpeg"
+          alt="Wood table background"
+          fill
+          priority
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
+      </div>
       {/* Overlay for darkening the wood background slightly */}
       <div className="absolute inset-0 bg-black/20"></div>
 
