@@ -1,13 +1,13 @@
 // components/Review.tsx
 'use client'
 
+import { useMemo } from 'react'
 import clsx from 'clsx'
 import { motion, HTMLMotionProps } from 'framer-motion'
+import type { Review as ReviewType } from '@/types/review'
 
-interface Review {
-  title: string
-  body: string
-  author: string
+interface ReviewProps extends ReviewType, Omit<HTMLMotionProps<'figure'>, keyof ReviewType> {
+  className?: string
 }
 
 export function Review({
@@ -16,8 +16,9 @@ export function Review({
   author,
   className,
   ...props
-}: Omit<React.ComponentPropsWithoutRef<'figure'>, keyof Review> & Review & HTMLMotionProps<'figure'>) {
-  const animationDelay = Math.random() * 0.5 // Random delay up to 0.5s
+}: ReviewProps) {
+  // Memoize the animation delay to prevent recalculation on re-renders
+  const animationDelay = useMemo(() => Math.random() * 0.5, [])
 
   return (
     <motion.figure
@@ -32,7 +33,7 @@ export function Review({
       {...props}
     >
       <blockquote className="text-white">
-        <p className="mt-4 text-lg font-semibold leading-6 before:content-['“'] after:content-['”']">
+        <p className="mt-4 text-lg font-semibold leading-6 before:content-['\u201C'] after:content-['\u201D']">
           {title}
         </p>
         <p className="mt-3 text-base leading-7">{body}</p>

@@ -3,9 +3,18 @@ import clsx from 'clsx'
 
 import frame from '@/public/phone_frame.svg'
 
-function PlaceholderFrame(props: React.ComponentPropsWithoutRef<'svg'>) {
+interface PlaceholderFrameProps extends React.ComponentPropsWithoutRef<'svg'> {
+  className?: string
+}
+
+function PlaceholderFrame({ className, ...props }: PlaceholderFrameProps) {
   return (
-    <svg viewBox="0 0 366 729" aria-hidden="true" {...props}>
+    <svg
+      viewBox="0 0 366 729"
+      aria-hidden="true"
+      className={className}
+      {...props}
+    >
       <path
         fill="#F2F2F2"
         fillRule="evenodd"
@@ -17,22 +26,39 @@ function PlaceholderFrame(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+interface PhoneFrameProps extends React.ComponentPropsWithoutRef<'div'> {
+  priority?: boolean
+}
+
 export function PhoneFrame({
   className,
   children,
   priority = false,
   ...props
-}: React.ComponentPropsWithoutRef<'div'> & { priority?: boolean }) {
+}: PhoneFrameProps) {
   return (
-    <div className={clsx('relative aspect-[366/729]', className)} {...props}>
-      <div className="absolute inset-y-[calc(1/729*100%)] left-[calc(7/729*100%)] right-[calc(5/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl" />
-      <div className="absolute left-[calc(23/366*100%)] top-4 rounded-xl grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-white">
+    <div
+      className={clsx('relative aspect-[366/729]', className)}
+      {...props}
+      role="presentation"
+    >
+      <div
+        className="absolute inset-y-[calc(1/729*100%)] left-[calc(7/729*100%)] right-[calc(5/729*100%)] rounded-[calc(58/366*100%)/calc(58/729*100%)] shadow-2xl"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute left-[calc(23/366*100%)] top-4 rounded-xl grid h-[calc(686/729*100%)] w-[calc(318/366*100%)] transform grid-cols-1 overflow-hidden bg-white"
+        aria-hidden="true"
+      >
         {children}
       </div>
-      <PlaceholderFrame className="pointer-events-none absolute inset-0 h-full w-full fill-gray-100" />
+      <PlaceholderFrame
+        className="pointer-events-none absolute inset-0 h-full w-full fill-gray-100"
+        aria-hidden="true"
+      />
       <Image
         src={frame}
-        alt=""
+        alt="Phone frame"
         className="pointer-events-none absolute inset-0 h-full w-full"
         unoptimized
         priority={priority}

@@ -1,7 +1,11 @@
 // store/features/uiSlice.ts
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+interface UIState {
+  darkMode: boolean;
+}
+
+const initialState: UIState = {
   darkMode: false,
 };
 
@@ -9,7 +13,7 @@ const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    toggleDarkMode(state) {
+    toggleDarkMode(state: UIState) {
       state.darkMode = !state.darkMode;
     },
   },
