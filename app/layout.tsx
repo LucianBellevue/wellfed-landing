@@ -14,19 +14,34 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Wellfed - Delicious Recipes & Meal Planning",
-  description: "Discover recipes and plan meals with Wellfed.",
+  description: "Helping you eat healthier with personalized meal plans, nutrition tracking, and delicious recipes tailored to your dietary preferences.",
+  metadataBase: new URL('https://wellfed.us'),
   openGraph: {
-    title: "Wellfed",
-    description: "Your go-to food and recipe app.",
-    url: "https://www.yourdomain.com",
+    title: "Wellfed - Crave your health through great taste",
+    description: "Helping you eat healthier with personalized meal plans, nutrition tracking, and delicious recipes tailored to your dietary preferences.",
+    url: "https://wellfed.us",
+    siteName: "Wellfed",
+    locale: "en_US",
+    type: "website",
     images: [
       {
-        url: "https://www.yourdomain.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Wellfed Hero Image",
+        url: "/wellfed-logo.png",
+        width: 800,
+        height: 600,
+        alt: "Wellfed Logo",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wellfed - Crave your health through great taste",
+    description: "Helping you eat healthier with personalized meal plans, nutrition tracking, and delicious recipes.",
+    images: ["/wellfed-logo.png"],
+  },
+  icons: {
+    icon: "/wellfed-logo.png",
+    shortcut: "/wellfed-logo.png",
+    apple: "/wellfed-logo.png",
   },
 };
 
