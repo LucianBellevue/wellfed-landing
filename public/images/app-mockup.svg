@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300" height="600" viewBox="0 0 300 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone frame -->
+  <rect x="10" y="10" width="280" height="580" rx="30" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  
+  <!-- Screen -->
+  <rect x="20" y="20" width="260" height="560" rx="20" fill="#F8FAFC"/>
+  
+  <!-- App header -->
+  <rect x="20" y="20" width="260" height="60" rx="20" fill="#10B981"/>
+  <circle cx="50" cy="50" r="15" fill="white" fill-opacity="0.8"/>
+  <rect x="80" y="40" width="120" height="20" rx="4" fill="white" fill-opacity="0.8"/>
+  
+  <!-- Food items -->
+  <rect x="40" y="100" width="220" height="100" rx="10" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="60" y="120" width="60" height="60" rx="8" fill="#FDE68A"/>
+  <rect x="130" y="120" width="110" height="10" rx="2" fill="#E2E8F0"/>
+  <rect x="130" y="140" width="90" height="10" rx="2" fill="#E2E8F0"/>
+  <rect x="130" y="160" width="70" height="10" rx="2" fill="#E2E8F0"/>
+  
+  <rect x="40" y="220" width="220" height="100" rx="10" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="60" y="240" width="60" height="60" rx="8" fill="#A7F3D0"/>
+  <rect x="130" y="240" width="110" height="10" rx="2" fill="#E2E8F0"/>
+  <rect x="130" y="260" width="90" height="10" rx="2" fill="#E2E8F0"/>
+  <rect x="130" y="280" width="70" height="10" rx="2" fill="#E2E8F0"/>
+  
+  <rect x="40" y="340" width="220" height="100" rx="10" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="60" y="360" width="60" height="60" rx="8" fill="#BFDBFE"/>
+  <rect x="130" y="360" width="110" height="10" rx="2" fill="#E2E8F0"/>
+  <rect x="130" y="380" width="90" height="10" rx="2" fill="#E2E8F0"/>
+  <rect x="130" y="400" width="70" height="10" rx="2" fill="#E2E8F0"/>
+  
+  <!-- Bottom navigation -->
+  <rect x="20" y="520" width="260" height="60" rx="20" fill="white"/>
+  <circle cx="60" cy="550" r="10" fill="#10B981"/>
+  <circle cx="150" cy="550" r="10" fill="#E2E8F0"/>
+  <circle cx="240" cy="550" r="10" fill="#E2E8F0"/>
+</svg>

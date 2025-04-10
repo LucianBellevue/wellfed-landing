@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${roboto.variable} bg-gray-50 antialiased`}>
+    <html lang="en" className={`${roboto.variable} bg-white antialiased`}>
       <body>
         <Providers>
           <Header />

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ArticleTwo() {
   return (
-    <article className="max-w-3xl mx-auto py-10 px-4">
+    <article className="mt-24 max-w-3xl mx-auto py-10 px-4">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
           How to Make a Balanced Dinner Plate (Keto Edition)

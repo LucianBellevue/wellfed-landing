@@ -81,8 +81,9 @@ export function Header() {
       />
       <nav>
         <Container className="relative z-50 flex justify-between py-6">
+          {/* Logo on left */}
           <motion.div 
-            className="relative z-10 flex items-center gap-16"
+            className="relative z-10 flex items-center"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -95,22 +96,24 @@ export function Header() {
                 <Logo className="h-10 w-auto" />
               </Link>
             </motion.div>
-            <div className="hidden lg:flex lg:gap-10">
+            <div className="hidden lg:flex lg:ml-16 lg:gap-10">
               <NavLinks />
             </div>
           </motion.div>
+
+          {/* Centered burger menu on mobile */}
           <motion.div 
-            className="flex items-center gap-6"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Popover className="lg:hidden">
+            <Popover>
               {({ open }: { open: boolean }) => (
                 <>
                   <motion.div whileTap={{ scale: 0.9 }}>
                     <PopoverButton
-                      className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
+                      className="relative z-[60] -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
                       aria-label="Toggle site navigation"
                     >
                       {({ open }: { open: boolean }) =>
@@ -143,7 +146,7 @@ export function Header() {
                             y: -32,
                             transition: { duration: 0.2 },
                           }}
-                          className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-white/90 backdrop-blur-md px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/10"
+                          className="fixed inset-x-0 top-0 z-50 origin-top rounded-b-2xl bg-white/90 backdrop-blur-md px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/10"
                         >
                           <div className="space-y-4">
                             <motion.div
@@ -181,7 +184,7 @@ export function Header() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
                           >
-                            <Button href="#" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-lg">
+                            <Button href="/download" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-lg">
                               Download the app
                             </Button>
                           </motion.div>
@@ -192,13 +195,22 @@ export function Header() {
                 </>
               )}
             </Popover>
+          </motion.div>
+
+          {/* Right side buttons (desktop only) */}
+          <motion.div 
+            className="flex items-center gap-6"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             <motion.div 
               whileHover={{ scale: 1.05 }} 
               whileTap={{ scale: 0.95 }}
               className="hidden lg:block"
             >
               <Button 
-                href="#" 
+                href="/download" 
                 className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-md"
               >
                 Download

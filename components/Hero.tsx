@@ -145,7 +145,7 @@ export function Hero() {
           <div className="lg:col-span-6 xl:col-span-7 relative mt-0 lg:mt-0">
             <div className="relative h-0 md:h-[500px] lg:h-[600px]">
               <motion.div
-                className="absolute left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-auto md:right-0 top-[-120px] sm:top-[-140px] md:top-auto md:bottom-[-80px] lg:bottom-[-120px] xl:bottom-[-180px] z-20 w-[280px] sm:w-[320px] md:w-[366px] max-w-full"
+                className="absolute left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-auto md:right-[5%] lg:right-[10%] top-[-120px] sm:top-[-140px] md:top-auto md:bottom-[-80px] lg:bottom-[-120px] xl:bottom-[-180px] z-20 w-[280px] sm:w-[320px] md:w-[340px] lg:w-[366px] max-w-full"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}

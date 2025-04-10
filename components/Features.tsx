@@ -25,7 +25,7 @@ export function Features() {
   const phoneRotateY = useTransform(scrollYProgress, [0.1, 0.3, 0.5], [0, 0, 5])
   
   return (
-    <section id="features" className="pt-48 pb-40 relative overflow-hidden bg-white" ref={sectionRef}>
+    <section id="features" className="pt-40 pb-20 relative overflow-hidden bg-white" ref={sectionRef}>
       {/* Simple white background */}
       
       {/* Background is kept clean without decorative elements */}
