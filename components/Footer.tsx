@@ -1,7 +1,6 @@
 // components/Footer.tsx
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -9,17 +8,7 @@ import { useState, useEffect } from "react";
 import Logomark from "@/components/Logo";
 import { NavLinks } from "@/components/NavLinks";
 
-function QrCodeBorder(props: React.ComponentPropsWithoutRef<"svg">) {
-  return (
-    <svg viewBox="0 0 96 96" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M1 17V9a8 8 0 0 1 8-8h8M95 17V9a8 8 0 0 0-8-8h-8M1 79v8a8 8 0 0 0 8 8h8M95 79v8a8 8 0 0 1-8 8h-8"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
+
 
 const socialLinks = [
   { name: 'Instagram', href: '#', icon: (
@@ -154,38 +143,37 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* QR Code */}
+          {/* call to action */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
             className="col-span-1">
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group">
+            <motion.div 
+              className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 group"
+              whileHover={{ scale: 1.03 }}
+              animate={{ y: [0, -5, 0] }}
+              transition={{
+                y: {
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 2,
+                  ease: "easeInOut"
+                },
+                scale: { duration: 0.2 }
+              }}
+            >
               <div className="flex items-center">
-                <div className="relative flex h-24 w-24 flex-none items-center justify-center">
-                  <QrCodeBorder className="absolute inset-0 h-full w-full stroke-gray-300 transition-colors group-hover:stroke-primary" />
-                  <Image
-                    src="/images/qr-code.jpeg"
-                    alt="QR code for app download"
-                    width={90}
-                    height={90}
-                    className="rounded-lg"
-                    priority
-                  />
-                </div>
                 <div className="ml-6">
                   <p className="text-base font-semibold text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
                     <Link href="/download">
                       Download the app
                     </Link>
                   </p>
-                  <p className="mt-1 text-sm text-gray-600">
-                    Scan the QR code to download the app from the App Store.
-                  </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 

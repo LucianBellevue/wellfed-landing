@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function DownloadPage() {
@@ -59,7 +58,7 @@ export default function DownloadPage() {
               Get the latest version of WellFed for your Android device. Requires Android 8.0 or higher.
             </p>
             <Link 
-              href="https://play.google.com/store" 
+              href="https://play.google.com/store/apps/details?id=com.wellfedv2.myapp&pcampaignid=web_share" 
               target="_blank" 
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center w-full py-3 px-4 rounded-lg font-medium ${
@@ -103,7 +102,7 @@ export default function DownloadPage() {
               Get the latest version of WellFed for your iPhone or iPad. Requires iOS 14.0 or higher.
             </p>
             <Link 
-              href="https://apps.apple.com" 
+              href="https://apps.apple.com/us/app/wellfed/id6743497707" 
               target="_blank" 
               rel="noopener noreferrer"
               className={`inline-flex items-center justify-center w-full py-3 px-4 rounded-lg font-medium ${
@@ -120,30 +119,6 @@ export default function DownloadPage() {
               Download for iOS
             </Link>
           </motion.div>
-        </motion.div>
-        
-        {/* QR Code Section */}
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <h2 className="text-2xl font-bold mb-6">Scan to Download</h2>
-          <div className="flex flex-col items-center">
-            <div className="bg-white p-4 rounded-xl shadow-lg inline-block">
-              <Image 
-                src="/images/qr-code.svg" 
-                alt="Download QR Code"
-                width={150}
-                height={150}
-                className="mx-auto"
-              />
-            </div>
-            <p className="mt-4 text-gray-600">
-              Scan this QR code with your phone&apos;s camera to download the app directly
-            </p>
-          </div>
         </motion.div>
         
         {/* Features Section */}

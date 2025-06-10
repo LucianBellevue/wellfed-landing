@@ -121,7 +121,7 @@ export function Hero() {
                 transition={{ type: "spring", stiffness: 400 }}
                 className="shadow-lg"
               >
-                <GoogleStoreLink url="https://play.google.com/store/apps/details?id=com.example.yourapp" />
+                <GoogleStoreLink url="https://play.google.com/store/apps/details?id=com.wellfedv2.myapp&pcampaignid=web_share" />
               </motion.div>
               
               <motion.div 

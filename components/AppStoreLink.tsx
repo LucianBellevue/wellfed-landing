@@ -8,7 +8,9 @@ export function AppStoreLink({
 }) {
   return (
     <Link
-      href="#"
+      href="https://apps.apple.com/us/app/wellfed/id6743497707"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Download on the App Store"
       className={clsx(
         'rounded-lg transition-colors flex items-center px-3 py-1.5',
