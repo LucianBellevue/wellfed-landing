@@ -13,6 +13,8 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import Logo from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
+import { useDispatch } from 'react-redux'
+import { setVideoModalOpen } from '@/store/features/uiSlice'
 
 function MenuIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -56,6 +58,7 @@ function MobileNavLink(
 }
 
 export function Header() {
+  const dispatch = useDispatch();
   const { scrollY } = useScroll();
   
   // Transform opacity based on scroll position
@@ -101,28 +104,32 @@ export function Header() {
             </div>
           </motion.div>
 
-          {/* Centered burger menu on mobile */}
+          {/* Right-aligned burger menu on mobile */}
           <motion.div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 lg:hidden"
+            className="absolute right-2 top-1/2 -translate-y-1/2 lg:hidden"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <Popover>
-              {({ open }: { open: boolean }) => (
+              {({ open, close }: { open: boolean; close: () => void }) => (
                 <>
                   <motion.div whileTap={{ scale: 0.9 }}>
                     <PopoverButton
                       className="relative z-[60] -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none"
                       aria-label="Toggle site navigation"
+                      onClick={() => {
+                        if (open) {
+                          // Explicitly close if already open
+                          close();
+                        }
+                      }}
                     >
-                      {({ open }: { open: boolean }) =>
-                        open ? (
-                          <ChevronUpIcon className="h-6 w-6" />
-                        ) : (
-                          <MenuIcon className="h-6 w-6" />
-                        )
-                      }
+                      {open ? (
+                        <ChevronUpIcon className="h-6 w-6" stroke="currentColor" />
+                      ) : (
+                        <MenuIcon className="h-6 w-6" stroke="currentColor" />
+                      )}
                     </PopoverButton>
                   </motion.div>
                   <AnimatePresence initial={false}>
@@ -186,6 +193,30 @@ export function Header() {
                           >
                             <Button href="/download" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white shadow-lg">
                               Download the app
+                            </Button>
+                            <Button 
+                              onClick={() => {
+                                // First close the toast menu
+                                close();
+                                
+                                // Then after a short delay, open the video modal via Redux
+                                setTimeout(() => {
+                                  dispatch(setVideoModalOpen(true));
+                                }, 300);
+                              }}
+                              variant="outline"
+                              color="primary"
+                              className="relative z-10 border border-primary/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40 flex items-center justify-center"
+                            >
+                              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-6 w-6 flex-none">
+                                <circle cx="12" cy="12" r="11.5" stroke="#b64b29" />
+                                <path
+                                  d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
+                                  fill="#b64b29"
+                                  stroke="#b64b29"
+                                />
+                              </svg>
+                              <span className="ml-2.5">Watch how it works</span>
                             </Button>
                           </motion.div>
                         </PopoverPanel>

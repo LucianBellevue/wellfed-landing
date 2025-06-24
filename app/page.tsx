@@ -4,6 +4,7 @@ import { BannerSection } from '@/components/BannerSection';
 import { ChefSpotlight } from '@/components/ChefSpotlight';
 import { Faqs } from '@/components/Faqs'
 import { Features } from '@/components/Features';
+import { FeaturedIn } from '@/components/FeaturedIn';
 import { Hero } from '@/components/Hero'
 import { Reviews } from '@/components/Reviews'
 
@@ -13,6 +14,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Features />
+      <FeaturedIn />
       <BannerSection />
       <Articles />
       <Reviews />

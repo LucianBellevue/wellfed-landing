@@ -6,9 +6,12 @@ import { GoogleStoreLink } from "@/components/GoogleStoreLink";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { PhoneFrame } from "@/components/PhoneFrame";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/store/store";
+import { setVideoModalOpen } from "@/store/features/uiSlice";
 
 function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -24,7 +27,8 @@ function PlayIcon(props: React.ComponentPropsWithoutRef<"svg">) {
 }
 
 export function Hero() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isVideoOpen = useSelector((state: RootState) => state.ui.videoModalOpen);
   const { scrollY } = useScroll();
   const headerControls = useAnimation();
   
@@ -103,7 +107,7 @@ export function Hero() {
             </motion.div>
             
             <motion.div 
-              className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-4 mb-16 sm:mb-20 md:mb-0"
+              className="mt-6 sm:mt-8 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6 }}
@@ -128,11 +132,11 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }} 
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <Button
-                  onClick={() => setIsVideoOpen(true)}
+                <Button 
+                  onClick={() => dispatch(setVideoModalOpen(true))}
                   variant="outline"
                   color="primary"
-                  className="relative z-10 border border-white/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40 w-full sm:w-auto flex items-center justify-center"
+                  className="relative z-10 border border-primary/40 bg-white/30 backdrop-blur-sm text-primary hover:bg-white/40 flex items-center justify-center"
                 >
                   <PlayIcon className="h-6 w-6 flex-none" />
                   <span className="ml-2.5">Watch how it works</span>
@@ -145,7 +149,7 @@ export function Hero() {
           <div className="lg:col-span-6 xl:col-span-7 relative mt-0 lg:mt-0">
             <div className="relative h-0 md:h-[500px] lg:h-[600px]">
               <motion.div
-                className="absolute left-1/2 transform -translate-x-1/2 md:translate-x-0 md:left-auto md:right-[5%] lg:right-[10%] top-[-120px] sm:top-[-140px] md:top-auto md:bottom-[-80px] lg:bottom-[-120px] xl:bottom-[-180px] z-20 w-[280px] sm:w-[320px] md:w-[340px] lg:w-[366px] max-w-full"
+                className="absolute top-1/2 right-10 transform -translate-x-1/2 -translate-y-1/2 sm:top-[-100px] md:top-auto md:bottom-[-80px] lg:bottom-[-120px] xl:bottom-[-180px] z-20 w-[280px] sm:w-[320px] md:w-[340px] lg:w-[366px] max-w-full"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
@@ -181,13 +185,13 @@ export function Hero() {
       </Container>
 
       {/* Video Modal */}
-      {isVideoOpen && (
-        <motion.div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-        >
+      <motion.div 
+        id="video-modal"
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 ${isVideoOpen ? '' : 'hidden'}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVideoOpen ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      >
           <motion.div 
             className="relative w-full max-w-4xl"
             initial={{ scale: 0.9, opacity: 0 }}
@@ -195,7 +199,7 @@ export function Hero() {
             transition={{ duration: 0.4, delay: 0.1 }}
           >
             <motion.button
-              onClick={() => setIsVideoOpen(false)}
+              onClick={() => dispatch(setVideoModalOpen(false))}
               className="absolute -top-12 right-0 text-white hover:text-gray-300 flex items-center gap-2 text-lg font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -216,7 +220,6 @@ export function Hero() {
             </div>
           </motion.div>
         </motion.div>
-      )}
     </section>
   );
 }

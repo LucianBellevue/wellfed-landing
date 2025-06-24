@@ -38,7 +38,7 @@ export function Features() {
             style={{ opacity: titleOpacity, y: titleY }}
           >
             <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary drop-shadow-md"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-primary [text-shadow:_0_4px_8px_rgba(0,0,0,0.5)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}

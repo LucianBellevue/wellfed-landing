@@ -1,12 +1,14 @@
 // store/features/uiSlice.ts
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UIState {
   darkMode: boolean;
+  videoModalOpen: boolean;
 }
 
 const initialState: UIState = {
   darkMode: false,
+  videoModalOpen: false,
 };
 
 const uiSlice = createSlice({
@@ -16,8 +18,11 @@ const uiSlice = createSlice({
     toggleDarkMode(state: UIState) {
       state.darkMode = !state.darkMode;
     },
+    setVideoModalOpen(state: UIState, action: PayloadAction<boolean>) {
+      state.videoModalOpen = action.payload;
+    },
   },
 });
 
-export const { toggleDarkMode } = uiSlice.actions;
+export const { toggleDarkMode, setVideoModalOpen } = uiSlice.actions;
 export default uiSlice.reducer;

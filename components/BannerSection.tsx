@@ -263,7 +263,7 @@ export function BannerSection() {
                 </svg>
               </span>
               <span className="relative">
-                <span className="absolute -inset-0.5 rounded-lg blur opacity-30 bg-white animate-[pulse_2s_ease-in-out_infinite]"></span>
+                <span className="absolute -inset-0.5 rounded-lg blur opacity-20 bg-white animate-[pulse_2s_ease-in-out_infinite]"></span>
                 <span className="relative">Download Our App</span>
               </span>
             </Link>

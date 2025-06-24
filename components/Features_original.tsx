@@ -232,6 +232,7 @@ export function Features() {
                 <p className="mt-3 text-gray-600 leading-relaxed flex-1">
                   Enjoy a curated selection of recipes that evolve with your feedback and preferences, ensuring every meal is something you&apos;ll love.
                 </p>
+              </div>
 
               
               {/* Enhanced gradient border effect */}
@@ -298,6 +299,7 @@ export function Features() {
                 <p className="mt-3 text-gray-600 leading-relaxed flex-1">
                   Let our AI help you effortlessly plan your meals, saving time and ensuring balanced nutrition throughout your week.
                 </p>
+              </div>
                 
               {/* Enhanced gradient border effect */}
               <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 transition-all duration-300 group-hover:opacity-100 pointer-events-none" />
