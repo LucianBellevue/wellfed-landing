@@ -22,12 +22,12 @@ const reviews: Array<Review> = [
   },
   {
     title: 'Finally sticking to my diet!',
-    body: "I&apos;ve tried every diet app out there, but WellFed is the only one that actually understands my keto lifestyle. The personalized shopping lists alone have saved me hours each week. My doctor is amazed at my latest lab results!",
+    body: "I've tried every diet app out there, but WellFed is the only one that actually understands my keto lifestyle. The personalized shopping lists alone have saved me hours each week. My doctor is amazed at my latest lab results!",
     author: 'Michael Chen, Seattle',
   },
   {
     title: 'Perfect for my fitness journey',
-    body: "As a personal trainer, I&apos;m always looking for tools to help my clients. WellFed has become my secret weapon! The macro tracking is spot-on, and the recipe suggestions keep things interesting. I&apos;ve recommended it to all my clients.",
+    body: "As a personal trainer, I'm always looking for tools to help my clients. WellFed has become my secret weapon! The macro tracking is spot-on, and the recipe suggestions keep things interesting. I've recommended it to all my clients.",
     author: 'Alicia Rodriguez, Miami',
   },
   {
@@ -37,12 +37,12 @@ const reviews: Array<Review> = [
   },
   {
     title: 'Perfect for our busy household',
-    body: "Between my husband&apos;s gluten intolerance and my vegetarian diet, meal planning was a nightmare. WellFed somehow manages to suggest meals we both love! The shared shopping list feature has eliminated our \"who&apos;s stopping at the grocery store\" texts.",
+    body: "Between my husband's gluten intolerance and my vegetarian diet, meal planning was a nightmare. WellFed somehow manages to suggest meals we both love! The shared shopping list feature has eliminated our \"who's stopping at the grocery store\" texts.",
     author: 'Emma Thompson, Austin',
   },
   {
     title: 'From takeout addict to home chef',
-    body: "I used to order takeout five nights a week because cooking felt overwhelming. WellFed&apos;s step-by-step recipes and prep instructions made cooking approachable. I&apos;ve saved money, lost weight, and actually enjoy cooking now. Who am I?!",
+    body: "I used to order takeout five nights a week because cooking felt overwhelming. WellFed's step-by-step recipes and prep instructions made cooking approachable. I've saved money, lost weight, and actually enjoy cooking now. Who am I?!",
     author: 'James Wilson, Portland',
   },
 ]
